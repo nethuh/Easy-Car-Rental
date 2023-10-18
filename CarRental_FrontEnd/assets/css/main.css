@@ -10,7 +10,7 @@
     --color-default: #212529;
     --color-primary: #efb70b;
     --color-secondary: #37373f;
-    --color-primary-red: #e7cf22;
+    --color-primary-red: rgb(231, 207, 34);
     --box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
 }
 
@@ -353,6 +353,44 @@ section {
     max-width: max-content;
 }
 
+/*--------------------------------------------------------------
+# About Section
+--------------------------------------------------------------*/
+
+.about .about-img {
+    min-height: 600px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.about h3 {
+    font-weight: 700;
+    font-size: 36px;
+    margin-bottom: 30px;
+    font-family: var(--font-secondary);
+}
+
+.about .content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.about .content ul li {
+    padding: 0 0 8px 26px;
+    position: relative;
+}
+
+.about .content ul i {
+    position: absolute;
+    font-size: 20px;
+    left: 0;
+    top: -3px;
+    color: var(--color-primary);
+}
+
+.about .content p:last-child {
+    margin-bottom: 0;
+}
 
 
 
