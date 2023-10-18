@@ -563,6 +563,19 @@ section {
     margin-bottom: 24px;
 }
 
+.Register-customer-new .reg-customer-form .loading:before {
+    content: "";
+    display: inline-block;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    margin: 0 10px -6px 0;
+    border: 3px solid #059652;
+    border-top-color: #fff;
+    -webkit-animation: animate-loading 1s linear infinite;
+    animation: animate-loading 1s linear infinite;
+}
+
 .Register-customer-new .reg-customer-form input,
 .Register-customer-new .reg-customer-form textarea {
     box-shadow: none;
@@ -582,4 +595,33 @@ section {
     width: 25.2em;
 }
 
+.Register-customer-new .reg-customer-form button[type=button] {
+    background: #218c74;
+    border: 0;
+    padding: 14px 60px;
+    color: #fff;
+    transition: 0.4s;
+    border-radius: 50px;
+}
 
+.Register-customer-new .reg-customer-form button[type=button]:hover {
+    background: #20bf6b;
+}
+
+@-webkit-keyframes animate-loading {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes animate-loading {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
