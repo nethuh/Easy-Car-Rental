@@ -373,6 +373,118 @@
         </div>
     </section>
 
+    <!-- ======= Register A Customer ======= -->
+    <section class="Register-customer-new" id="Register-customer-new">
+        <div class="container" data-aos="fade-up">
+
+            <div class="section-header">
+                <h2>Register A Customer</h2>
+                <p style="font-family: Garamond, serif;">Register <span>Your Stay</span> With Us</p>
+            </div>
+
+            <div class="row g-0">
+
+                <div class="col-lg-4 register-img sectionBorder"
+                     data-aos="zoom-out" data-aos-delay="200"
+                     style="background-image: url(assets/img/reg_user.jpg);"></div>
+
+                <div class="col-lg-8 d-flex align-items-center register-form-bg sectionBorder">
+                    <form action="customer" class="reg-customer-form" data-aos="fade-up" data-aos-delay="100"
+                          id="customerForm"
+                          method="post" role="form">
+                        <div class="row gy-3">
+                            <div class="col-lg-6 col-md-8">
+                                <label class="form-label" for="user_Id">User Id</label>
+                                <input class="form-control" id="user_Id" name="user_Id" placeholder="C00-001" readonly
+                                       type="text">
+                                <span class="control-error"></span>
+                            </div>
+                            <div class="col-lg-6 col-md-8">
+                                <label class="form-label" for="firstName">First Name</label>
+                                <input class="form-control" id="firstName" name="firstName" placeholder="First Name"
+                                       type="text">
+                                <span class="control-error"></span>
+                            </div>
+                            <div class="col-lg-6 col-md-8">
+                                <label class="form-label" for="lastName">Last Name</label>
+                                <input class="form-control" id="lastName" name="lastName" placeholder="Last Name"
+                                       type="text">
+                                <span class="control-error"></span>
+                            </div>
+                            <div class="col-lg-6 col-md-8">
+                                <label class="form-label" for="contact_No">Contact Number</label>
+                                <input class="form-control" id="contact_No" name="contact_No"
+                                       placeholder="Contact Number"
+                                       type="text">
+                                <span class="control-error"></span>
+                            </div>
+                            <div class="col-lg-6 col-md-8">
+                                <label class="form-label" for="address">Address</label>
+                                <input class="form-control" id="address" name="address" placeholder="Address"
+                                       type="text">
+                                <span class="control-error"></span>
+                            </div>
+                            <div class="col-lg-6 col-md-8">
+                                <label class="form-label" for="email">Email</label>
+                                <input class="form-control" id="email" name="email" placeholder="Email Address"
+                                       type="text">
+                                <span class="control-error"></span>
+                            </div>
+                            <div class="col-lg-6 col-md-8">
+                                <label class="form-label" for="nic">NIC</label>
+                                <input class="form-control" id="nic" name="nic" placeholder="National ID" type="text">
+                                <span class="control-error"></span>
+                            </div>
+                            <div class="col-lg-6 col-md-8">
+                                <label class="form-label" for="license_No">License Id</label>
+                                <input class="form-control" id="license_No" name="license_No"
+                                       placeholder="Driving License"
+                                       type="text">
+                                <span class="control-error"></span>
+                            </div>
+                            <div class="col-lg-6 col-md-8">
+                                <label class="form-label" for="nic_Img">Upload NIC</label>
+                                <input class="form-control" id="nic_Img" name="nic_Img" type="file">
+                                <span class="control-error"></span>
+                            </div>
+                            <div class="col-lg-6 col-md-8">
+                                <label class="form-label" for="license_Img">Upload License </label>
+                                <input class="form-control" id="license_Img" name="license_Img" type="file">
+                                <span class="control-error"></span>
+                            </div>
+                            <div class="col-lg-6 col-md-8">
+                                <label class="form-label" for="role_Type">Role Type</label>
+                                <select class="form-control" id="role_Type" name="role_Type" style="height: 3.2em">
+                                    <option value="REGISTERED_USER">REGISTERED_USER</option>
+                                </select>
+                                <span class="control-error"></span>
+                            </div>
+                            <div class="col-lg-6 col-md-8">
+                                <label class="form-label" for="user_Name">User Name</label>
+                                <input class="form-control" id="user_Name" name="user_Name" placeholder="User Name"
+                                       type="text">
+                                <span class="control-error"></span>
+                            </div>
+                            <div class="col-lg-6 col-md-8">
+                                <label class="form-label" for="password">Password</label>
+                                <input class="form-control" id="password" name="password" placeholder="Enter Password"
+                                       type="password">
+                                <span class="control-error"></span>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <button class="btn btn-success mt-3" id="btnSaveCustomer" type="button">REGISTER
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <!-- End Register Form -->
+
+            </div>
+
+        </div>
+    </section>
+
 </main>
 
 

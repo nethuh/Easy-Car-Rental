@@ -490,11 +490,96 @@ section {
     text-align: center;
     top: 0;
 
+}
 
+
+/*--------------------------------------------------------------
+# Register New Customer Section
+--------------------------------------------------------------*/
+
+.Register-customer-new .register-img {
+    min-height: 500px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    box-shadow: 1px 2px 7px 4px #d7d6d6;
+}
+
+.Register-customer-new .register-form-bg {
+    background: #dcdde1;
+    box-shadow: 1px 2px 7px 4px #d7d6d6;
+    border-radius: 15px;
+}
+
+.Register-customer-new .reg-customer-form {
+    padding: 40px;
+}
+
+.Register-customer-new .reg-customer-form h3 {
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.Register-customer-new .reg-customer-form h4 {
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 20px 0 0 0;
+}
+
+.Register-customer-new .reg-customer-form p {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.Register-customer-new .reg-customer-form .error-message {
+    display: none;
+    color: #fff;
+    background: #df1529;
+    text-align: left;
+    padding: 15px;
+    margin-bottom: 24px;
+    font-weight: 600;
+}
+
+.Register-customer-new .reg-customer-form .sent-message {
+    display: none;
+    color: #fff;
+    background: #059652;
+    text-align: center;
+    padding: 15px;
+    margin-bottom: 24px;
+    font-weight: 600;
+}
+
+.Register-customer-new .reg-customer-form .loading {
+    display: none;
+    background: #fff;
+    text-align: center;
+    padding: 15px;
+    margin-bottom: 24px;
+}
+
+.Register-customer-new .reg-customer-form input,
+.Register-customer-new .reg-customer-form textarea {
+    box-shadow: none;
+    font-size: 14px;
 
 }
-.detailsBox{
 
+.Register-customer-new .reg-customer-form input:focus {
+    border-color: red;
+}
+
+.Register-customer-new .reg-customer-form input {
+    padding: 12px 15px;
+}
+
+.Register-customer-new .width {
+    width: 25.2em;
 }
 
 
