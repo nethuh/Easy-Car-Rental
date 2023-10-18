@@ -290,11 +290,11 @@ section {
 }
 
 .hero h2 {
-    font-size: 39px;
+    font-size: 42px;
     font-weight: 700;
     margin-bottom: 20px;
     color: var(--color-secondary);
-    /*font-family: var(--font-primary);*/
+    font-family: Garamond, serif;
 }
 
 .hero h2 span {
@@ -392,5 +392,34 @@ section {
     margin-bottom: 0;
 }
 
+/*--------------------------------------------------------------
+# Stats Counter Section
+--------------------------------------------------------------*/
 
+.stats-counter {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/counter.jpg") center center;
+    background-size: cover;
+    padding: 42px 0;
+}
+
+.stats-counter .stats-item {
+    padding: 30px;
+    width: 100%;
+}
+
+.stats-counter .stats-item span {
+    font-size: 48px;
+    display: block;
+    color: #fff;
+    font-weight: 700;
+}
+
+.stats-counter .stats-item p {
+    padding: 0;
+    margin: 0;
+    font-family: var(--font-secondary);
+    font-size: 18px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.6);
+}
 
