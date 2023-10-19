@@ -625,3 +625,60 @@ section {
         transform: rotate(360deg);
     }
 }
+
+
+/*--------------------------------------------------------------
+# Contact Section
+--------------------------------------------------------------*/
+
+.contact .info-item{
+    background: #f4f4f4;
+    padding: 30px;
+    height: 100%;
+    border-radius: 20px;
+    box-shadow: rgb(0 0 0 / 30%) 0 19px 38px, rgb(0 0 0 / 22%) 0 15px 12px;
+
+}
+.contact .info-item .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    font-size: 24px;
+    line-height: 0;
+    color: #fff;
+    background: var(--color-primary);
+    border-radius: 50%;
+    margin-right: 15px;
+}
+.contact .info-item h3{
+    font-size: 20px;
+    color:#6c757d;
+    font-weight: 700;
+    margin: 0 0 5px 0;
+}
+.contact .info-item p {
+    padding: 0;
+    margin: 0;
+    line-height: 24px;
+    font-size: 14px;
+}
+.contact .info-item .social-links a {
+    font-size: 24px;
+    display: inline-block;
+    color: rgba(55, 55, 63, 0.7);
+    line-height: 1;
+    margin: 4px 6px 0 0;
+    transition: 0.3s;
+}
+.contact .info-item .social-links a:hover {
+    color: var(--color-primary);
+}
+.contact .email-form {
+    width: 100%;
+    margin-top: 40px;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: rgb(0 0 0 / 30%) 0 19px 38px, rgb(0 0 0 / 22%) 0 15px 12px;
+}
