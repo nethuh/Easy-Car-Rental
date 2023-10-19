@@ -695,16 +695,6 @@ section {
 .contact .email-form .error-message br + br {
     margin-top: 25px;
 }
-
-.contact .email-form .sent-message {
-    display: none;
-    color: #fff;
-    background: #059652;
-    text-align: center;
-    padding: 15px;
-    font-weight: 600;
-}
-
 .contact .email-form .loading {
     display: none;
     background: #fff;
@@ -750,4 +740,117 @@ section {
     100% {
         transform: rotate(360deg);
     }
+}
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+
+.footer {
+    font-size: 14px;
+    background: #0c1215;
+    background: -webkit-linear-gradient(to right, #593d08, #3a2c0a, #0c1215);
+    background: linear-gradient(to right, #6e5106, #362805, #101010);
+    padding: 50px 0;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.footer .icon {
+    margin-right: 15px;
+    font-size: 24px;
+    line-height: 0;
+}
+
+.footer h4 {
+    font-size: 16px;
+    position: relative;
+    font-weight: bold;
+    padding-bottom: 5px;
+    color: #fff;
+}
+
+.text {
+    font-size: 15px;
+    position: relative;
+    padding-bottom: 5px;
+    color: #fff;
+}
+
+.footer .footer-links {
+    margin-bottom: 30px;
+}
+
+.footer .footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer .footer-links ul li {
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+}
+
+.footer .footer-links ul li:first-child {
+    padding-top: 0;
+}
+
+.footer .footer-links ul a {
+    color: rgba(255, 255, 255, 0.6);
+    transition: 0.3s;
+    display: inline-block;
+    line-height: 1;
+}
+
+.footer .footer-links ul a:hover {
+    color: #fff;
+}
+
+.footer .social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.7);
+    margin-right: 10px;
+    transition: 0.3s;
+}
+
+.footer .social-links a:hover {
+    color: #fff;
+    border-color: #fff;
+}
+
+.footer .copyright {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer .credits {
+    padding-top: 4px;
+    text-align: center;
+    font-size: 13px;
+}
+
+.footer .credits a {
+    color: #fff;
+}
+
+form .form-label,.input-group-text{
+    font-size: 0.9em;
+    font-weight: bolder;
+    color: #2c3e50;
+}
+
+form .form-control {
+    font-size: 0.9em;
+    font-weight: bolder;
+    color: #2f3640;
+    border-radius: 10px!important;
 }
