@@ -28,7 +28,7 @@
                                 </div>
                                 <form class="user m-2 p-3" id="loginForm">
                                     <div class="form-group">
-                                        <select class="form-control" id="role_Type" name="role_Type">
+                                        <select class="form-control" id="role_Type" name="role_Type" style="border-radius: 30px;height: 3.5em">
                                             <option value="RoleType">Choose Role</option>
                                             <option value="ADMIN">ADMIN</option>
                                             <option value="REGISTERED_USER">REGISTERED_USER</option>
@@ -44,11 +44,24 @@
                                         <input type="password" class="form-control form-control-user"
                                                id="password" placeholder="Password">
                                     </div>
+                                    <div class="form-group">
+                                        <div class="custom-control custom-checkbox small">
+                                            <input type="checkbox" class="custom-control-input" id="customCheck">
+                                            <label class="custom-control-label" for="customCheck">Remember
+                                                Me</label>
+                                        </div>
+                                    </div>
                                     <button id="btnLogin" type="button" class="btn btn-primary btn-user btn-block">
                                         Login
                                     </button>
                                 </form>
                                 <hr>
+                                <div class="text-center">
+                                    <a class="small" href="">Forgot Password?</a>
+                                </div>
+                                <div class="text-center">
+                                    <a class="small" href="../index.html">Create an Account!</a>
+                                </div>
                             </div>
                         </div>
                     </div>
