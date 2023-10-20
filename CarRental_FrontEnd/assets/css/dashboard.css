@@ -332,11 +332,11 @@ margin-top: 20px;
 
 .sidebar-nav .nav-link:hover {
     color: #01132a;
-    background: #f6f9ff;
+    background: #eea909;
 }
 
 .sidebar-nav .nav-link:hover i {
-    color: #eea909;
+    color: #0a0500;
 }
 
 .sidebar-nav .nav-link .bi-chevron-down {
@@ -365,6 +365,7 @@ margin-top: 20px;
 .sidebar-nav .nav-content a.active {
     color: #101010;
 }
+
 /*--------------------------------------------------------------
 # Form
 --------------------------------------------------------------*/
