@@ -163,6 +163,20 @@
                                             <input class="form-control" readonly id="userFirstName" name="firstName"
                                                    placeholder="First Name" type="text">
                                         </div>
+                                        <div class="mb-3">
+                                            <label class="form-label" for="userLastName">Last Name<span
+                                                    class="text-danger"></span></label>
+                                            <input class="form-control" readonly id="userLastName" name="lastName"
+                                                   placeholder="Last Name" type="text">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label" for="customerContactNo">Contact
+                                                Number<span
+                                                        class="text-danger"></span></label>
+                                            <input class="form-control" readonly id="customerContactNo"
+                                                   name="contact_No"
+                                                   placeholder="Contact No" type="text">
+                                        </div>
                                     </section>
                                     <section id="sec2CustomerDetails" class="col-xl-4">
                                         <div class="mb-3">
@@ -229,7 +243,52 @@
                 </div>
             </div>
         </section>
+        <section class="container-fluid mt-3" id="driverShedule">
+            <nav>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item" href="driverDashboard.html">Home</li>
+                    <li class="breadcrumb-item active">Manage / Drivers</li>
+                </ol>
+            </nav>
 
+            <div class="row mt-3">
+                <div class="card info-card">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-xl-12">
+                                        <div class="row">
+                                            <div class="table-responsive-xxl flex-grow-0 gap-3 col-xl-8 mt-4 sectionBorder"
+                                                 style="height: 400px; background: white;">
+                                                <div class="table-responsive customerTableDiv overflow-auto "
+                                                     style="height: 420px;">
+                                                    <table class="text-nowrap table table-light table-striped table-bordered table-hover">
+                                                        <thead class="text-dark table-warning text-center  table-bordered">
+                                                        <tr>
+                                                            <th scope="col">Rent ID</th>
+                                                            <th scope="col">Car ID</th>
+                                                            <th scope="col">Pick-Up Date</th>
+                                                            <th scope="col">Pick-Up Time</th>
+                                                            <th scope="col">Return Date</th>
+                                                            <th scope="col">Return Time</th>
+                                                            <th scope="col">Location</th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody id="driverSheduleTable"></tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
 </main>
 
 <!-- Vendor JS Files -->
