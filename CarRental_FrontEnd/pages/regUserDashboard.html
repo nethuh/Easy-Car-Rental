@@ -136,11 +136,72 @@
     </ul>
 
 </aside>
+
+<!-- ======= Main ======= -->
+<main id="main" class="main">
+
+    <div class="pageTitle">
+        <h1>User Dashboard</h1>
+        <section class="container-fluid mt-3" id="bookingResponse">
+            <nav>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="">Home</a></li>
+                    <li class="breadcrumb-item active">Booking Details</li>
+                </ol>
+            </nav>
+
+            <div class="row mt-3">
+                <div class="card info-card">
+
+                    <div class="mb-3 mt-5 d-grid gap-1 d-md-flex justify-content-md-center">
+                        <form>
+                            <div class="col col-lg-12 col-sm-8">
+                                <label class="form-label" for="responseRentId">Rent ID<span
+                                        class="text-danger"></span></label>
+                                <input class="form-control" id="responseRentId" readonly
+                                       name="rent_Id"
+                                       placeholder="Rent ID" type="text">
+                            </div>
+                        </form>
+                        <button type="button" class="btn btn-danger btn mt-4 m-4  h-50" id="btnDeleteRental">
+                            Delete Rental
+                        </button>
+                    </div>
+
+                    <div class="row mt-1 mt-md-2 mt-lg-4 mm-2 p-2 justify-content-around" style="height: 350px;">
+                        <div class="col-11 justify-content-around sectionBorder"
+                             style="height: 290px; background: white">
+                            <div class="table-responsive customerTableDiv overflow-auto " style="height: 300px;">
+                                <table class="table table-light table-striped table-bordered table-hover">
+                                    <thead class="text-dark table-warning text-nowrap text-center  table-bordered">
+                                    <tr>
+                                        <th scope="col">Rent ID</th>
+                                        <th scope="col">User ID</th>
+                                        <th scope="col">Car ID</th>
+                                        <th scope="col">Pick-Up Date</th>
+                                        <th scope="col">Return Date</th>
+                                        <th scope="col">Return Time</th>
+                                        <th scope="col">Location</th>
+                                        <th scope="col">Rent Type</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody id="tblResponse"></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
 <!-- Vendor JS Files -->
 <script src="../assets/vendor/apexcharts/apexcharts.min.js"></script>
 <script src="../assets/vendor/bootstrap-5.2.1-dist/js/bootstrap.bundle.min.js"></script>
 <script src="../assets/vendor/jQuery/jquery-3.6.1.min.js "></script>
 <script rel="script" src="../assets/vendor/sweetalert2-11.6.16/sweetalert2.min.js"></script>
+<script>
 
+</script>
 </body>
 </html>
