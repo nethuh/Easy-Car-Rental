@@ -297,5 +297,22 @@
 <script src="../assets/vendor/jQuery/jquery-3.6.1.min.js "></script>
 <script rel="script" src="../assets/vendor/sweetalert2-11.6.16/sweetalert2.min.js"></script>
 
+<script>
+    $(document).ready(function (){
+        // will be Not visible when the page loads.
+        $("#profileDetails").css('display','none');
+        // will be visible when the page loads.
+        $("#driverShedule").css('display','block');
+    });
+    $("driverDashboardSection").click()(function (){
+        $("#profileDetails").css('display','none');
+        $("#driverShedule").css('display','block');
+    });
+    $("#myDetailsSection,#Mypro,#Mypro1").click(function (){
+        $("profileDetails").css('display','block');
+        $("#driverShedule").css('display','none');
+    });
+
+</script>
 </body>
 </html>
