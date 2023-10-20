@@ -43,6 +43,20 @@ h6 {
 
 
 /*--------------------------------------------------------------
+# Page Title
+--------------------------------------------------------------*/
+.pageTitle {
+    margin-bottom: 10px;
+}
+
+.pageTitle h1 {
+    font-size: 24px;
+    margin-bottom: 0;
+    font-weight: 600;
+    color: #012970;
+}
+
+/*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
 .logo {
@@ -263,7 +277,13 @@ h6 {
     margin: 0;
     list-style: none;
 }
+@media (min-width: 1200px) {
 
+    #main,
+    #footer {
+        margin-left: 300px;
+    }
+}
 .sidebar-nav li {
     padding: 0;
     margin: 0;
@@ -345,4 +365,21 @@ margin-top: 20px;
 .sidebar-nav .nav-content a.active {
     color: #101010;
 }
+/*--------------------------------------------------------------
+# Form
+--------------------------------------------------------------*/
 
+form .form-label, .input-group-text {
+    font-size: 1em;
+    margin-bottom: 2px;
+    font-weight: bolder;
+    color: #012970;
+}
+
+form .form-control {
+    font-size: 1em;
+    margin-bottom: 2px;
+    font-weight: 600;
+    color: #2f3640;
+    border-radius: 10px;
+}
