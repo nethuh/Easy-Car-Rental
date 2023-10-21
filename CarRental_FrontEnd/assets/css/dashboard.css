@@ -339,18 +339,10 @@ margin-top: 20px;
 .sidebar-nav .nav-link.collapsed i {
     color: #eea909;
 }
-
-.sidebar-nav .nav-link {
-    display: flex;
-    align-items: center;
-    font-size: 15px;
-    font-weight: 600;
-    color: #0a0500;
+.sidebar-nav .nav-link.active{
+    color: #01132a;
     transition: 0.3s;
     background: #eea909;
-    padding: 10px 15px;
-    border-radius: 6px;
-    text-decoration: none;
 }
 
 .sidebar-nav .nav-link:hover {
@@ -358,9 +350,16 @@ margin-top: 20px;
     background:  #eea909;
 }
 
-.sidebar-nav .nav-link.active {
-    color: #eea909;
+.sidebar-nav .nav-link {
+    padding: 10px 15px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #01132a;
     background: white;
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    font-weight: 600;
 }
 
 .sidebar-nav .nav-link:hover i {

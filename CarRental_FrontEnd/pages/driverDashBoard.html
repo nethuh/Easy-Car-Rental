@@ -236,7 +236,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card info-card">
+                <div class="card info-card" style="top: 30px">
                     <div class=" row col-12 mb-3 m-2 p-2 d-flex">
                         <div class=" col-md-6 col-lg-6 col-sm-6 xs-5 img-fluid" style="border: 2px solid black; height: 400px; " id="photoImg"></div>
                     </div>
@@ -323,7 +323,21 @@
         $("#profileDetails").css('display', 'block');
         $("#driverShedule").css('display', 'none');
     });
+    // Get all the navigation links
+    const navLinks = document.querySelectorAll('.nav-link');
 
+    // Add a click event listener to each navigation link
+    navLinks.forEach(link => {
+        link.addEventListener('click', (event) => {
+            // Remove the 'active' class from all navigation links
+            navLinks.forEach(navLink => {
+                navLink.classList.remove('active');
+            });
+
+            // Add the 'active' class to the clicked navigation link
+            link.classList.add('active');
+        });
+    });
 </script>
 </body>
 </html>

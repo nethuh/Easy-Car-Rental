@@ -557,33 +557,23 @@
             }
         }
     });
-    // // Get all the navigation links
-    // const navLinks = document.querySelectorAll('.nav-link');
-    //
-    // // Add a click event listener to each navigation link
-    // navLinks.forEach(link => {
-    //     link.addEventListener('click', (event) => {
-    //         // Prevent the default behavior (e.g., following the href)
-    //         event.preventDefault();
-    //
-    //         // Remove the 'active' class from all navigation links
-    //         navLinks.forEach(navLink => {
-    //             navLink.classList.remove('active');
-    //         });
-    //
-    //         // Add the 'active' class to the clicked navigation link
-    //         link.classList.add('active');
-    //
-    //         // Get the target section's ID to scroll to
-    //         const sectionId = link.getAttribute('href').substring(1);
-    //         const targetSection = document.getElementById(sectionId);
-    //
-    //         // Scroll to the target section smoothly
-    //         if (targetSection) {
-    //             targetSection.scrollIntoView({ behavior: 'smooth' });
-    //         }
-    //     });
-    // });
+
+    // Get all the navigation links
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    // Add a click event listener to each navigation link
+    navLinks.forEach(link => {
+        link.addEventListener('click', (event) => {
+            // Remove the 'active' class from all navigation links
+            navLinks.forEach(navLink => {
+                navLink.classList.remove('active');
+            });
+
+            // Add the 'active' class to the clicked navigation link
+            link.classList.add('active');
+        });
+    });
+
 
 </script>
 </body>
