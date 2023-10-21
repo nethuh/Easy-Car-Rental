@@ -15,6 +15,7 @@
     <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
     <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
     <link href="../assets/vendor/sweetalert2-11.6.16/sweetalert2.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
 
     <link href="../assets/css/dashboard.css" rel="stylesheet">
 
@@ -249,12 +250,12 @@
                                     <div class="mt-4 " style="padding: 3rem;border: 2px solid black">
                                         <div class="swiper mySwiper">
                                             <div class="swiper-wrapper">
-                                                <div id="imageLoad1" class="swiper-slide" style="height: 80px"></div>
-                                                <div id="imageLoad2" class="swiper-slide" style="height:80px"></div>
-                                                <div id="imageLoad3" class="swiper-slide" style="height:80px"></div>
-                                                <div id="imageLoad4" class="swiper-slide" style="height:80px"></div>
+                                                <div id="imageLoad1" class="swiper-slide" style="height:345px"></div>
+                                                <div id="imageLoad2" class="swiper-slide" style="height:345px"></div>
+                                                <div id="imageLoad3" class="swiper-slide" style="height:345px"></div>
+                                                <div id="imageLoad4" class="swiper-slide" style="height:345px"></div>
                                             </div>
-                                            <div class="swiper-button-next"></div>
+                                            <div style="color: #0c63e4" class="swiper-button-next"></div>
                                             <div class="swiper-button-prev"></div>
                                             <div class="swiper-pagination"></div>
                                             <div class="autoplay-progress">
@@ -359,6 +360,134 @@
                 </div>
             </div>
         </section>
+
+        <section class="container-fluid mt-3" id="profileDetails">
+            <nav>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="">Home</a></li>
+                    <li class="breadcrumb-item active">Profile</li>
+                </ol>
+            </nav>
+
+            <div class="row mt-3">
+                <div class="card info-card">
+                    <div class="card-body mt-4">
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <form id="customerDetailsForm" class="row">
+                                    <section id="sec1CustomerDetails" class="col-xl-4">
+                                        <div class="mb-3">
+                                            <label class="form-label" for="cusUserID">User ID<span
+                                                    class="text-danger"></span></label>
+                                            <input class="form-control" readonly id="cusUserID" name="user_Id"
+                                                   placeholder="User ID" type="text">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label" for="userFirstName">First Name<span
+                                                    class="text-danger"></span></label>
+                                            <input class="form-control" id="userFirstName" name="firstName"
+                                                   placeholder="First Name" type="text">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label" for="userLastName">Last Name<span
+                                                    class="text-danger"></span></label>
+                                            <input class="form-control" id="userLastName" name="lastName"
+                                                   placeholder="Last Name" type="text">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label" for="customerContactNo">Contact
+                                                Number<span
+                                                        class="text-danger"></span></label>
+                                            <input class="form-control" id="customerContactNo" name="contact_No"
+                                                   placeholder="Contact No" type="text">
+                                        </div>
+                                    </section>
+                                    <section id="sec2CustomerDetails" class="col-xl-4">
+                                        <div class="mb-3">
+                                            <label class="form-label" for="customerAddress">Address<span
+                                                    class="text-danger"></span></label>
+                                            <input class="form-control" id="customerAddress" name="address"
+                                                   placeholder="Address" type="text">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label" for="customerDriverEmail">Email<span
+                                                    class="text-danger"></span></label>
+                                            <input class="form-control" id="customerDriverEmail" name="email"
+                                                   placeholder="Email" type="text">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label" for="customerNic">Nic No<span
+                                                    class="text-danger"></span></label>
+                                            <input class="form-control" id="customerNic" name="nic"
+                                                   placeholder="Nic No" type="text">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label" for="imgNiC">NIC Image<span
+                                                    class="text-danger"></span></label>
+                                            <input class="form-control" id="imgNiC" name="nic_Img"
+                                                   placeholder="NIC NO" type="file">
+                                        </div>
+                                    </section>
+                                    <section id="sec3CustomerDetails" class="col-xl-4">
+                                        <div class="mb-3">
+                                            <label class="form-label" for="customerLicence">Licence No<span
+                                                    class="text-danger"></span></label>
+                                            <input class="form-control" id="customerLicence" name="license_No"
+                                                   placeholder="Licence No" type="text">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label" for="imgLicence">Licence Image<span
+                                                    class="text-danger"></span></label>
+                                            <input class="form-control" id="imgLicence" name="license_Img"
+                                                   placeholder="NIC NO" type="file">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="customerUserName" class="form-label">User Name<span
+                                                    class="text-danger"></span></label>
+                                            <div class="input-group has-validation">
+                                                        <span class="input-group-text"
+                                                              id="customerInputGroupPrepend">@</span>
+                                                <input type="text" class="form-control" id="customerUserName"
+                                                       name="user_Name" placeholder="User Name"
+                                                       aria-describedby="customerInputGroupPrepend" required>
+                                                <div class="invalid-feedback">
+                                                    Please choose a username.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="customerPassword" class="form-label">Password<span
+                                                    class="text-danger"></span></label>
+                                            <div class="input-group input-group-merge">
+                                                <input type="password" id="customerPassword" name="password"
+                                                       class="form-control" placeholder="Password">
+                                                <div class="input-group-text" data-password="false">
+                                                    <span class="bi bi-eye-slash"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 d-grid gap-1 d-md-flex justify-content-md-end">
+                                            <button type="button" class="btn btn-warning btn me-md-1"
+                                                    id="updateCustomer">
+                                                Update
+                                            </button>
+                                        </div>
+                                    </section>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card info-card">
+                    <div class=" row col-12 mb-3 m-2 p-2 d-flex">
+                        <div class=" col-md-5 col-lg-5 col-sm-5 xs-5 img-fluid m-3 p-3"
+                             style="border: 2px solid black; height: 400px; " id="photoImg1"></div>
+                        <div class=" col-md-5 col-lg-5 col-sm-5 xs-5 img-fluid m-3 p-3"
+                             style="border: 2px solid black; height: 400px; " id="photoImg2"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
 </main>
 <!-- Vendor JS Files -->
@@ -366,6 +495,8 @@
 <script src="../assets/vendor/bootstrap-5.2.1-dist/js/bootstrap.bundle.min.js"></script>
 <script src="../assets/vendor/jQuery/jquery-3.6.1.min.js "></script>
 <script rel="script" src="../assets/vendor/sweetalert2-11.6.16/sweetalert2.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
 <script>
     $(document).ready(function (){
         $("#bookingResponse").css('display','block');
@@ -376,6 +507,22 @@
         $("#bookingResponse").css('display', 'none');
         $("#rentDetails").css('display', 'block');
         $("#profileDetails").css('display', 'none');
+    });
+    $("#userDashboardSection").click(function () {
+        $("#bookingResponse").css('display', 'block');
+        $("#rentDetails").css('display', 'none');
+        $("#profileDetails").css('display', 'none');
+    });
+    $("#bookingResponseSection").click(function () {
+        $("#bookingResponse").css('display', 'block');
+        $("#rentDetails").css('display', 'none');
+        $("#profileDetails").css('display', 'none');
+    });
+
+    $("#myDetailsSection,#userDetails,#userDetailss").click(function () {
+        $("#bookingResponse").css('display', 'none');
+        $("#rentDetails").css('display', 'none');
+        $("#profileDetails").css('display', 'block');
     });
 </script>
 </body>
