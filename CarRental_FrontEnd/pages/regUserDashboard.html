@@ -193,6 +193,172 @@
                 </div>
             </div>
         </section>
+
+        <section class="container-fluid mt-3" id="rentDetails">
+            <nav>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="">Home</a></li>
+                    <li class="breadcrumb-item active">Rent</li>
+                </ol>
+            </nav>
+
+            <div class="row mt-3">
+                <div class="card info-card">
+                    <div class="col col-lg-12">
+                        <div class="row col-12 m-2 p-2  justify-content-lg-center">
+                            <di class="row col-lg-6 gap-3 gap-lg-0 col-md-5 col-sm-6 col-xs-3 justify-content-md-around">
+                                <div class="col-lg-6">
+                                    <label class="form-label" for="rent_Id">Rent Id</label>
+                                    <input type="text" name="rent_Id" class="form-control" id="rent_Id"
+                                           readonly placeholder="REN-001">
+                                </div>
+                                <div class="col-lg-6">
+                                    <label class="form-label" for="user_Id">User Id</label>
+                                    <input type="text" name="user_Id" class="form-control" id="user_Id"
+                                           readonly placeholder="C00-001">
+                                </div>
+                            </di>
+                            <div class="row col-lg-6 gap-3 gap-lg-0 d-flex col-md-5 col-sm-6 col-xs-3 justify-content-md-around">
+                                <div class="col-lg-6">
+                                    <label class="form-label" for="category_type">Category</label>
+                                    <select class="form-control" id="category_type" name="category_type">
+                                        <option>Choose Type..</option>
+                                        <option value="GENERAL">GENERAL</option>
+                                        <option value="LUXURY">LUXURY</option>
+                                        <option value="PREMIUM">PREMIUM</option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-6">
+                                    <label class="form-label" for="fuel_Type">Fuel Type</label>
+                                    <select class="form-control" id="fuel_Type" name="fuel_Type">
+                                        <option>Choose Type..</option>
+                                        <option value="DIESEL">DIESEL</option>
+                                        <option value="PETROL">PETROL</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card info-card">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="row">
+                                <div class="col-lg-5">
+                                    <div class="mt-4 ">
+                                        <div class="swiper mySwiper">
+                                            <div class="swiper-wrapper">
+                                                <div id="imageLoad1" class="swiper-slide" style="height: 345px"></div>
+                                                <div id="imageLoad2" class="swiper-slide" style="height:345px"></div>
+                                                <div id="imageLoad3" class="swiper-slide" style="height:345px"></div>
+                                                <div id="imageLoad4" class="swiper-slide" style="height:345px"></div>
+                                            </div>
+                                            <div class="swiper-button-next"></div>
+                                            <div class="swiper-button-prev"></div>
+                                            <div class="swiper-pagination"></div>
+                                            <div class="autoplay-progress">
+                                                <svg viewBox="0 0 48 48">
+                                                    <circle cx="24" cy="24" r="20"></circle>
+                                                </svg>
+                                                <span></span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 p-2">
+                                    <div class="row mt-1 m-2 p-1">
+                                        <div class="col-12 col-md-6 col-lg-6">
+                                            <label class="fw-bold" for="car_Id">Car ID :</label>
+                                            <select aria-label="Default select example" class="form-select border-dark"
+                                                    id="car_Id" name="car_Id"></select>
+                                        </div>
+                                        <div class="col-12 col-md-6 col-lg-6">
+                                            <label class="fw-bold" for="name">Brand :</label>
+                                            <input class="form-control " id="name" readonly type="text">
+                                        </div>
+                                    </div>
+                                    <div class="row mt-1 m-2 p-1">
+                                        <div class="col-12 col-md-6 col-lg-6">
+                                            <label class="fw-bold" for="brand">Model :</label>
+                                            <input class="form-control " id="brand" readonly type="text">
+                                        </div>
+                                        <div class="col-12 col-md-6 col-lg-6">
+                                            <label class="fw-bold" for="number_Of_Passengers">No of Passengers :</label>
+                                            <input class="form-control " id="number_Of_Passengers" readonly type="text">
+                                        </div>
+                                    </div>
+                                    <div class="row mt-1 m-2 p-1">
+                                        <div class="col-12 col-md-6 col-lg-6">
+                                            <label class="fw-bold" for="pickUpDate">PickUp Date :</label>
+                                            <input class="form-control " id="pickUpDate" type="date">
+                                        </div>
+                                        <div class="col-12 col-md-6 col-lg-6">
+                                            <label class="fw-bold" for="pickUpTime">PickUp Time :</label>
+                                            <input class="form-control " id="pickUpTime" type="time">
+                                        </div>
+                                    </div>
+                                    <div class="row mt-1 m-2 p-1">
+                                        <div class="col-12 col-md-6 col-lg-6">
+                                            <label class="fw-bold" for="returnDate">Return Date :</label>
+                                            <input class="form-control " id="returnDate" type="date">
+                                        </div>
+                                        <div class="col-12 col-md-6 col-lg-6">
+                                            <label class="fw-bold" for="returnTime">Return Time :</label>
+                                            <input class="form-control " id="returnTime" type="time">
+                                        </div>
+                                    </div>
+                                    <div class="row mt-1 m-2 p-1">
+                                        <div class="col-12 col-md-6 col-lg-6">
+                                            <label class="fw-bold" for="requestType">Driver or not :</label>
+                                            <select class="form-control " id="requestType">
+                                                <option value="YES">YES</option>
+                                                <option value="NO">NO</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-12 col-md-6 col-lg-6">
+                                            <label class="fw-bold" for="location">Location :</label>
+                                            <input class="form-control " id="location" type="text">
+                                        </div>
+                                    </div>
+                                    <div class="mt-4 mb-3 d-grid gap-2 d-sm-flex justify-content-md-center">
+                                        <button class="btn btn-warning me-md-1" id="btnAddCart" type="button">Add Cart
+                                        </button>
+                                        <button type="button" class="btn btn-success me-md-1" id="btnReservation">
+                                            Reservation
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card info-card">
+                <div class="row mt-1 mt-md-2 mt-lg-4 mm-2 p-2 justify-content-around" style="height: 350px;">
+                    <div class="col-11 justify-content-around sectionBorder"
+                         style="height: 290px; background: white">
+                        <div class="table-responsive customerTableDiv overflow-auto " style="height: 300px;">
+                            <table class="table table-light table-striped table-bordered table-hover">
+                                <thead class="text-dark table-warning text-center  table-bordered sticky-top">
+                                <tr>
+                                    <th scope="col">Car Id</th>
+                                    <th scope="col">PickUp Date</th>
+                                    <th scope="col">PickUp Time</th>
+                                    <th scope="col">Return Date</th>
+                                    <th scope="col">Return Time</th>
+                                    <th scope="col">Request Type</th>
+                                    <th scope="col">Location</th>
+                                </tr>
+                                </thead>
+                                <tbody id="cartTable"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
 </main>
 <!-- Vendor JS Files -->
