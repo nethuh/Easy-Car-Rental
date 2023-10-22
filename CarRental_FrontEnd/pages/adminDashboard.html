@@ -526,6 +526,79 @@
                     </div>
                 </div>
             </div>
+
+            <div class="col-lg-4">
+
+                <div class="card">
+                    <div class="filter">
+                        <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                            <li class="dropdown-header text-start">
+                                <h6>Filter</h6>
+                            </li>
+
+                            <li><a class="dropdown-item" href="#">Today</a></li>
+                            <li><a class="dropdown-item" href="#">This Month</a></li>
+                            <li><a class="dropdown-item" href="#">This Year</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="card-body">
+                        <h5 class="card-title">Recent Activity <span>| Today</span></h5>
+
+                        <div class="activity">
+
+                            <div class="activity-item d-flex">
+                                <div class="activite-label">40 min</div>
+                                <i class='bi bi-circle-fill activity-badge text-success align-self-start'></i>
+                                <div class="activity-content">
+                                    Add New Car <a href="#" class="fw-bold text-dark">Brand BMW</a>
+                                </div>
+                            </div>
+
+                            <div class="activity-item d-flex">
+                                <div class="activite-label">56 min</div>
+                                <i class='bi bi-circle-fill activity-badge text-danger align-self-start'></i>
+                                <div class="activity-content">
+                                    C00-002 Customer Rent CAR-003
+                                </div>
+                            </div>
+
+                            <div class="activity-item d-flex">
+                                <div class="activite-label">2 hrs</div>
+                                <i class='bi bi-circle-fill activity-badge text-primary align-self-start'></i>
+                                <div class="activity-content">
+                                    C00-010 Customer Rent CAR-007
+                                </div>
+                            </div>
+
+                            <div class="activity-item d-flex">
+                                <div class="activite-label">40 min</div>
+                                <i class='bi bi-circle-fill activity-badge text-success align-self-start'></i>
+                                <div class="activity-content">
+                                    Add New Car <a href="#" class="fw-bold text-dark">Brand Banz</a>
+                                </div>
+                            </div>
+
+                            <div class="activity-item d-flex">
+                                <div class="activite-label">2 days</div>
+                                <i class='bi bi-circle-fill activity-badge text-warning align-self-start'></i>
+                                <div class="activity-content">
+                                    C00-012 Customer Request a Rent CRI-007 Car.
+                                </div>
+                            </div>
+
+                            <div class="activity-item d-flex">
+                                <div class="activite-label">2 Days</div>
+                                <i class='bi bi-circle-fill activity-badge text-success align-self-start'></i>
+                                <div class="activity-content">
+                                    Add New Car <a href="#" class="fw-bold text-dark">Brand Banz</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 </main>
@@ -534,6 +607,15 @@
 <script src="../assets/vendor/bootstrap-5.2.1-dist/js/bootstrap.bundle.min.js"></script>
 <script src="../assets/vendor/jQuery/jquery-3.6.1.min.js "></script>
 <script rel="script" src="../assets/vendor/sweetalert2-11.6.16/sweetalert2.min.js"></script>
-
+<script>
+const navLinks = document.querySelectorAll('.nav-link');
+navLinks.forEach(link => {
+    link.addEventListener('click', (event) => {
+        navLinks.forEach(navLink => {
+            navLink.classList.remove('active');
+        });
+        link.classList.add('active');
+    });
+});</script>
 </body>
 </html>
