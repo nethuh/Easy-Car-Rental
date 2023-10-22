@@ -385,7 +385,7 @@ margin-top: 20px;
     align-items: center;
     font-size: 14px;
     font-weight: 600;
-    color: #012970;
+    color: #ffffff;
     transition: 0.3s;
     padding: 10px 0 10px 40px;
 }
@@ -399,7 +399,7 @@ margin-top: 20px;
 
 .sidebar-nav .nav-content a:hover,
 .sidebar-nav .nav-content a.active {
-    color: #101010;
+    color: #eea909;
 }
 .sidebar-nav .nav-content a.active i {
     background-color: #4154f1;
