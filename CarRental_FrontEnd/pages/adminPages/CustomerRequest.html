@@ -424,6 +424,136 @@
             </div>
         </section>
     </div>
+
+
+    <!-- Modal -->
+    <div class="modal fade modal-lg" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Payment Rent</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="PayementToRent" action="payment" class="row mb-3">
+                        <div class="mb-2 col-xl-3 col-sm-6">
+                            <label class="form-label" for="paymentID">Payement ID<span
+                                    class="text-danger"></span></label>
+                            <input class="form-control mt-1" id="paymentID" readonly
+                                   name="paymentID"
+                                   placeholder="Payment ID" type="text">
+                        </div>
+                        <div class="mb-2 col-xl-3 col-sm-6">
+                            <label class="form-label" for="rentId">Rent ID<span
+                                    class="text-danger"></span></label>
+                            <input class="form-control mt-1" id="rentID" readonly
+                                   name="rentID"
+                                   placeholder="Rent ID" type="text">
+                        </div>
+                        <div class="mb-2 col-xl-3 col-sm-6">
+                            <label class="form-label" for="paymentType">Payment Type<span
+                                    class="text-danger"></span></label>
+                            <select aria-label="Default select example" class="form-select m-1"
+                                    id="paymentType" name="paymentType" placeholder="Payment Type">
+                                <option>--Select Type--</option>
+                                <option value="NOMARL">NOMARL</option>
+                                <option value="LOST_DAMAGE">LOST_DAMAGE</option>
+                            </select>
+                        </div>
+                        <div class="mb-2 col-xl-3 col-sm-6">
+                            <label class="form-label" for="userID">Payment Date<span
+                                    class="text-danger"></span></label>
+                            <input class="form-control mt-1" id="date"
+                                   name="date" readonly
+                                   placeholder="Payment Date" type="text">
+                        </div>
+                        <div class="mb-2 col-xl-3 col-sm-6">
+                            <label class="form-label" for="time">Payment Time<span
+                                    class="text-danger"></span></label>
+                            <input class="form-control mt-1" id="time"
+                                   name="time" readonly
+                                   placeholder="Payment Time" type="text">
+                        </div>
+                        <div class="mb-2 col-xl-3 col-sm-6">
+                            <label class="form-label" for="rentFee">Car Fee<span
+                                    class="text-danger"></span></label>
+                            <input class="form-control mt-1" id="rentFee"
+                                   name="rentFee" readonly
+                                   placeholder="Rent Fee" type="text">
+                        </div>
+                        <div class="mb-2 col-xl-3 col-sm-6">
+                            <label class="form-label" for="total">Days<span
+                                    class="text-danger"></span></label>
+                            <input class="form-control mt-1" id="days"
+                                   name="days"
+                                   placeholder="Days" type="text">
+                        </div>
+                        <div class="mb-2 col-xl-3 col-sm-6">
+                            <label class="form-label" for="lostDamage">Lost Damage<span
+                                    class="text-danger"></span></label>
+                            <input class="form-control mt-1" id="lostDamage"
+                                   name="lostDamage"
+                                   placeholder="Lost Damage" type="text">
+                        </div>
+                        <div class="mb-2 col-xl-3 col-sm-6">
+                            <label class="form-label" for="mileage">Mileage<span
+                                    class="text-danger"></span></label>
+                            <input class="form-control mt-1" id="mileage"
+                                   name="mileage"
+                                   placeholder="Mileage" type="text">
+                        </div>
+                        <div class="mb-2 col-xl-3 col-sm-6">
+                            <label class="form-label" for="driverFee">Driver Fee<span
+                                    class="text-danger"></span></label>
+                            <input class="form-control mt-1" id="driverFee"
+                                   name="driverFee"
+                                   placeholder="Driver Fee" type="text">
+                        </div>
+                        <div class="mb-2 col-xl-3 col-sm-6">
+                            <label class="form-label" for="total">Total<span
+                                    class="text-danger"></span></label>
+                            <input class="form-control mt-1" id="total"
+                                   name="total" readonly
+                                   placeholder="Total" type="text">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-success" form="PayementToRent" id="btnPay">Pay</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </main>
+
+<!-- ======= Footer ======= -->
+<footer id="footer" class="footer">
+    <div class="copyright">
+        &copy; Copyright <strong><span>Easy Car Rent</span></strong>. All Rights Reserved
+    </div>
+    <div class="credits">
+        Designed by <a href="">Sayani Nethmi</a>
+    </div>
+</footer>
+
+<!-- Vendor JS Files -->
+<script src="../../assets/vendor/apexcharts/apexcharts.min.js"></script>
+<script src="../../assets/vendor/bootstrap-5.2.1-dist/js/bootstrap.bundle.min.js"></script>
+<script src="../../assets/vendor/jQuery/jquery-3.6.1.min.js "></script>
+<script rel="script" src="../../assets/vendor/sweetalert2-11.6.16/sweetalert2.min.js"></script>
+
+<script>
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
+        link.addEventListener('click', (event) => {
+            navLinks.forEach(navLink => {
+                navLink.classList.remove('active');
+            });
+            link.classList.add('active');
+        });
+    });
+</script>
 </body>
 </html>
