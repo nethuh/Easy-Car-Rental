@@ -307,6 +307,123 @@
     </ul>
 </aside>
 
+<!-- ======= Main ======= -->
+<main id="main" class="main">
 
+    <!-- ======= Car Manage ======= -->
+    <div class="pageTitle" id="pageFour">
+        <h1>Manage</h1>
+        <section class="container-fluid mt-3" id="manageCar">
+            <nav>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="../adminDashboard.html">Home</a></li>
+                    <li class="breadcrumb-item active">Rent Request</li>
+                </ol>
+            </nav>
+
+            <div class="row mt-3">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card info-card">
+                            <div class="card-body">
+                                <div class="row mt-3">
+                                    <div class="col-xl-12">
+                                        <!--booking request details -->
+                                        <form id="customerRequestForm" class="row mb-3">
+                                            <section id="secResponseDetails" class="row mx-0">
+                                                <div class="mb-2 col-xl-3 col-sm-6">
+                                                    <label class="form-label" for="requestRentId">Rent ID<span
+                                                            class="text-danger"></span></label>
+                                                    <input class="form-control mt-1" id="requestRentId" readonly
+                                                           name="rent_Id"
+                                                           placeholder="Rent ID" type="text">
+                                                </div>
+                                                <div class="mb-2 col-xl-3 col-sm-6">
+                                                    <label class="form-label" for="driverId">Driver ID<span
+                                                            class="text-danger"></span></label>
+                                                    <select aria-label="Default select example" class="form-select m-1"
+                                                            id="driverId" name="driverId"
+                                                            placeholder="Driver Id"></select>
+                                                </div>
+                                                <div class="mb-2 col-xl-3 col-sm-6">
+                                                    <label class="form-label" for="userID">User ID<span
+                                                            class="text-danger"></span></label>
+                                                    <input class="form-control mt-1" id="userID" readonly
+                                                           name="useID"
+                                                           placeholder="User ID" type="text">
+                                                </div>
+                                                <div class="mb-2 col-xl-3 col-sm-6">
+                                                    <label class="form-label" for="requestState">Request State<span
+                                                            class="text-danger"></span></label>
+                                                    <input class="form-control mt-1" id="requestState" readonly
+                                                           name="requestState"
+                                                           placeholder="Request State" type="text">
+                                                </div>
+
+                                            </section>
+                                        </form>
+
+                                        <!--button content-->
+                                        <div class="mb-3 mt-2 d-grid gap-1 d-md-flex justify-content-md-end">
+                                            <button type="button" class="btn btn-success btn m-1 p-2" id="btnAccept">
+                                                Accept
+                                            </button>
+                                            <button type="button" class="btn btn-danger btn m-1 p-2" id="btnReject">
+                                                Reject
+                                            </button>
+                                            <button type="button" class="btn btn-primary m-1 p-2" data-bs-toggle="modal"
+                                                    data-bs-target="#exampleModal">
+                                                Payment
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card info-card">
+                            <!--searchBar -->
+                            <div class="search-bar mt-4 ms-4">
+                                <div class="search-form d-flex align-items-center">
+                                    <input type="search" name="car_Id" id="search_Id" placeholder="Search"
+                                           title="Enter search keyword">
+                                    <button type="button" title="Search"><i class="bi bi-search"></i></button>
+                                </div>
+                            </div>
+
+
+                            <!--request table -->
+                            <div class="row mt-1 mt-md-2 mt-lg-4 justify-content-around" style="height: 320px;">
+                                <div class="col-11 justify-content-around sectionBorder"
+                                     style="height: 280px; background: white">
+                                    <div class="table-responsive customerTableDiv overflow-auto "
+                                         style="height: 300px;">
+                                        <table class="text-nowrap table table-light table-striped table-bordered table-hover">
+                                            <thead class="text-dark table-danger text-center  table-bordered sticky-top">
+                                            <tr>
+                                                <th scope="col">Rent ID</th>
+                                                <th scope="col">Car ID</th>
+                                                <th scope="col">User ID</th>
+                                                <th scope="col">Driver ID</th>
+                                                <th scope="col">Driver Select</th>
+                                                <th scope="col">Rent Request</th>
+                                                <th scope="col">Pick Date</th>
+                                                <th scope="col">Pick Time</th>
+                                                <th scope="col">Return Time</th>
+                                                <th scope="col">Return Date</th>
+                                                <th scope="col">Location</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody id="retManage"></tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
 </body>
 </html>
