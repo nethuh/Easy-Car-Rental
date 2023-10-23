@@ -731,21 +731,24 @@ section {
 --------------------------------------------------------------*/
 
 .footer {
-    font-size: 14px;
-    background: #0c1215;
-    background: -webkit-linear-gradient(to right, #593d08, #3a2c0a, #0c1215);
-    background: linear-gradient(to right, #6e5106, #362805, #101010);
-    padding: 50px 0;
-    color: rgba(255, 255, 255, 0.7);
-}
+    background-image: linear-gradient(to right, #3C3F41, #2B2B2B);
+    color: #fff;
+    height: 500px;
 
+}
+.footer_img {
+    width: 100%;
+
+}
 .footer .icon {
     margin-right: 15px;
     font-size: 24px;
     line-height: 0;
+    margin-top: 50px;
 }
 
 .footer h4 {
+    margin-top: 50px;
     font-size: 16px;
     position: relative;
     font-weight: bold;
