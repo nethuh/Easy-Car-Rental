@@ -9,7 +9,7 @@
 :root {
     --color-default: #212529;
     --color-primary: #efb70b;
-    --color-secondary: #37373f;
+    --color-secondary: #ffffff;
     --color-primary-red: rgb(231, 207, 34);
     --box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
 }
@@ -280,16 +280,15 @@ section {
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
-
-.hero {
-    width: 100%;
-    background-size: cover;
-    position: relative;
-    min-height: 87vh;
-    padding: 160px 0 60px 0;
+#hero {
+    background-image: linear-gradient(to right, #636e72, #000000);
+    color: #fff;
+    padding-top: 5%;
+    margin-top: 90px;
+    height: 670px;
 }
-
-.hero h2 {
+#hero h2 {
+    margin-top: 43px;
     font-size: 42px;
     font-weight: 700;
     margin-bottom: 20px;
@@ -297,17 +296,18 @@ section {
     font-family: Garamond, serif;
 }
 
-.hero h2 span {
+
+#hero h2 span {
     color: var(--color-primary);
 }
 
-.hero p {
-    color: #4f4f5a;
+#hero p {
+    color: #ffffff;
     font-weight: 400;
     margin-bottom: 30px;
 }
 
-.hero .btn-Register-customer-new {
+#hero .btn-Register-customer-new {
     font-weight: 500;
     font-size: 14px;
     letter-spacing: 1px;
@@ -317,16 +317,19 @@ section {
     transition: 0.5s;
     color: #fff;
     background: var(--color-primary);
-    box-shadow: 0 8px 28px rgba(206, 18, 18, 0.2);
+    box-shadow: 0 8px 28px rgba(16, 16, 16, 0.38);
 }
 
-.hero .btn-Register-customer-new:hover {
-    background: rgba(206, 18, 18, 0.8);
-    box-shadow: 0 8px 28px rgba(206, 18, 18, 0.45);
+#hero .btn-Register-customer-new:hover {
+    background: rgb(255, 186, 27);
+    box-shadow: 0 8px 28px rgba(16, 16, 16, 0.62);
+}
+.img-fluid {
+    width: 500px;
 }
 
-.img-size {
-    max-width: max-content;
+.bottom_img {
+    width: 100%;
 }
 
 /*--------------------------------------------------------------

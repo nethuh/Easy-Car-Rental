@@ -49,10 +49,10 @@
 </header>
 
 <!--======= Hero Section =======-->
-<section class="hero d-flex align-items-center section-bg" id="hero">
+<section id="hero">
     <div class="container">
         <div class="row justify-content-between gy-5">
-            <div class="col-lg-5 order-2 order-lg-1 d-flex flex-column justify-content-center align-items-center align-items-lg-start text-center text-lg-start">
+            <div class="col-md-5"> <!--first column-->
                 <h2 data-aos="fade-up">Want the latest car?   <br>Come and hire</h2>
                 <p data-aos="fade-up" data-aos-delay="100">Search & Compare the World's Leading <span
                         style=" font-weight: 600;">Car Rental</span> Suppliers Today! No Credit Card Fees. We Speak Your
@@ -60,16 +60,23 @@
                     Australia, Ireland, Switzerland.</p>
                 <div class="d-flex" data-aos="fade-up" data-aos-delay="200">
                     <a class="btn-Register-customer-new" href="#RegisterCus">Register</a>
-                     </div>
+                </div>
             </div>
-            <div class="col-lg-5 order-1 order-lg-2 text-center text-lg-start">
-                <img alt="" class="img-fluid img-size" data-aos="zoom-out" data-aos-delay="300"
-                     src="assets/img/car.png">
+
+            <div class="col-md-7"> <!--Second column-->
+                <div class="carousel-inner">
+                    <div class="carousel-item active" data-bs-interval="1800">
+                        <img style="margin-top: 40px" alt="..." class="d-block w-100" src="assets/img/car_a.png">
+                        <div class="carousel-caption d-none d-md-block">
+
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+    <img class="bottom_img" src="assets/img/wave1.png">
 </section>
-
 <main id="main">
 
     <!--     ======= About Section =======-->
@@ -656,6 +663,7 @@
     $(document).ready(function () {
         AOS.init();
     });
+    new PureCounter();
 </script>
 
 </body>
