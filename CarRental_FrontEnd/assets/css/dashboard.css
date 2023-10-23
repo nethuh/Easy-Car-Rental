@@ -41,7 +41,11 @@ h6 {
     transition: all 0.3s;
 }
 
-
+@media (max-width: 1199px) {
+    #main {
+        padding: 20px;
+    }
+}
 /*--------------------------------------------------------------
 # Page Title
 --------------------------------------------------------------*/
@@ -54,6 +58,38 @@ h6 {
     margin-bottom: 0;
     font-weight: 600;
     color: #012970;
+}
+/*--------------------------------------------------------------
+# Back to top button
+--------------------------------------------------------------*/
+.back-to-top {
+    position: fixed;
+    visibility: hidden;
+    opacity: 0;
+    right: 15px;
+    bottom: 15px;
+    z-index: 99999;
+    background: #ce1212;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    transition: all 0.4s;
+}
+
+.back-to-top i {
+    font-size: 24px;
+    color: #fff;
+    line-height: 0;
+}
+
+.back-to-top:hover {
+    background: #fc5c65;
+    color: #fff;
+}
+
+.back-to-top.active {
+    visibility: visible;
+    opacity: 1;
 }
 
 /*--------------------------------------------------------------
