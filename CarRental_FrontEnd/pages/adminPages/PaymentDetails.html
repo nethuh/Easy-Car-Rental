@@ -232,5 +232,144 @@
     </nav>
 </header>
 
+<!-- ======= Sidebar ======= -->
+<aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+        <li class="nav-item">
+            <a class="nav-link " href="../adminDashboard.html">
+                <i class="bi bi-grid"></i>
+                <span>Dashboard</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
+                <i class="bi bi-kanban"></i><span>Manage</span><i class="bi bi-chevron-down ms-auto"></i>
+            </a>
+            <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                <li>
+                    <a href="../adminPages/RegUserManage.html">
+                        <i class="bi bi-circle"></i><span>Customer</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../adminPages/DriverManage.html">
+                        <i class="bi bi-circle"></i><span>Driver</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../adminPages/CarManage.html">
+                        <i class="bi bi-circle"></i><span>Car</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+                <i class="bi bi-layout-text-window-reverse"></i><span>Details</span><i
+                    class="bi bi-chevron-down ms-auto"></i>
+            </a>
+            <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                <li>
+                    <a href="PaymentDetails.html">
+                        <i class="bi bi-circle"></i><span>Payment Details</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="RentDetails.html">
+                        <i class="bi bi-circle"></i><span>Rent Details</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="CustomerRequest.html" id="myDetailsSection">
+                <i class="bi bi-kanban"></i>
+                <span>Rent Request</span>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="IncomeDetails.html" id="incomeDetails">
+                <i class="bi bi-kanban"></i>
+                <span>Income Details</span>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="../login.html">
+                <i class="bi bi-box-arrow-in-right"></i>
+                <span>LogOut</span>
+            </a>
+        </li>
+    </ul>
+</aside>
+
+<!-- ======= Main ======= -->
+<main id="main" class="main">
+
+    <!-- ======= Payment Manage ======= -->
+    <div class="pageTitle" id="pageFour">
+        <h1>Manage</h1>
+        <section class="container-fluid mt-3" id="managePayment">
+            <nav>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="../adminDashboard.html">Home</a></li>
+                    <li class="breadcrumb-item active">Details / Payment Details</li>
+                </ol>
+            </nav>
+
+            <div class="row mt-3">
+                <div class="card info-card">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-xl-12">
+                                        <div class="row m-3">
+                                        </div>
+                                        <div class="row mt-3 mt-md-2 mt-lg-4 justify-content-around"
+                                             style="height: 490px;">
+                                            <div class="col-11 justify-content-around sectionBorder"
+                                                 style="height: 460px; background: white">
+                                                <div class="table-responsive customerTableDiv overflow-auto "
+                                                     style="height: 470px;">
+                                                    <table class="table text-nowrap table-light table-striped table-bordered table-hover">
+                                                        <thead class="text-dark table-warning text-center  table-bordered sticky-top">
+                                                        <tr>
+                                                            <th scope="col">Payment ID</th>
+                                                            <th scope="col">Rent ID</th>
+                                                            <th scope="col"> Customer ID</th>
+                                                            <th scope="col">Type</th>
+                                                            <th scope="col">Date</th>
+                                                            <th scope="col">time</th>
+                                                            <th scope="col">Amount (Rs.)</th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody id="paymentTable"></tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+
+<!-- Vendor JS Files -->
+<script src="../../assets/vendor/apexcharts/apexcharts.min.js"></script>
+<script src="../../assets/vendor/bootstrap-5.2.1-dist/js/bootstrap.bundle.min.js"></script>
+<script src="../../assets/vendor/jQuery/jquery-3.6.1.min.js "></script>
+<script rel="script" src="../../assets/vendor/sweetalert2-11.6.16/sweetalert2.min.js"></script>
+
 </body>
 </html>
