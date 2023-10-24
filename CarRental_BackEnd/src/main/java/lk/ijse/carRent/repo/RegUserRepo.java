@@ -1,4 +1,7 @@
 package lk.ijse.carRent.repo;
 
-public interface RegUserRepo {
+import lk.ijse.carRent.entity.RegUser;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface RegUserRepo extends JpaRepository<RegUser, String> {
 }
