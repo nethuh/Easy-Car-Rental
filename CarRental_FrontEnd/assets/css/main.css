@@ -565,7 +565,7 @@ section {
 }
 
 .Register-customer-new .reg-customer-form input:focus {
-    border-color: red;
+    border-color: #d7d6d6;
 }
 
 .Register-customer-new .reg-customer-form input {
