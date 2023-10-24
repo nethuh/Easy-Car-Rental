@@ -10,7 +10,7 @@ import org.springframework.web.multipart.MultipartFile;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-public class RegUserDTO {
+public class Reg_UserDTO {
     private String user_Id;
     private Name name;//embeded
     private String contact_No;
@@ -21,4 +21,5 @@ public class RegUserDTO {
     private MultipartFile nic_Img;//handle file uploads.
     private MultipartFile license_Img;//handle file uploads.
 
+    private UserDTO user;
 }
