@@ -15,34 +15,34 @@ function login(){
         dataType: "json",
         success: function (res){
             for (var login of res.data){
-                if (loginRole_Type === login.role_Type && loginUserName === login.user_Name && Login.password){
-                    if (loginRole_Type === "" && loginUserName === login.role_Type && loginPassword === login.password){
+                if (loginRole_Type === login.role_Type && loginUserName === login.user_Name && loginPassword === login.password){
+                    if (loginRole_Type === "DRIVER" && loginUserName === login.role_Type && loginPassword === login.password){
                         $.ajax({
-                            url: baseUrlLogin + "" + loginUserName + "" + loginPassword,
+                            url: baseUrlLogin + "loginForm/?username=" + loginUserName + "&password=" + loginPassword,
                             data:res.data,
                             method:"get",
                             success:function (res1){
 
                             }
                         })
-                        window.location.href ='';
+                        window.location.href ='driverDashboard.html';
 
 
-                    }else if (loginRole_Type === "" && loginUserName === login.user_Name && loginPassword === login.password){
+                    }else if (loginRole_Type === "REGISTERED_USER" && loginUserName === login.user_Name && loginPassword === login.password){
                         $.ajax({
-                            url: baseUrlLogin + "" + loginUserName + "" + loginPassword,
+                            url: baseUrlLogin + "loginForm/?username=" + loginUserName + "&password=" + loginPassword,
                             data:res.data,
                             method:"get",
                             success:function (res1){
 
                             }
                         });
-                         window.location.href = '';
+                         window.location.href = 'regUserDashboard.html';
 
 
 
-                    }else if (loginRole_Type === "" && loginUserName === login.user_Name && loginPassword === login.password){
-                        window.location.href ='';
+                    }else if (loginRole_Type === "ADMIN" && loginUserName === login.user_Name && loginPassword === login.password){
+                        window.location.href ='adminDashboard.html';
 
                     }
                     return;
