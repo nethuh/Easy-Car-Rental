@@ -1,6 +1,7 @@
 package lk.ijse.carRent.service.impl;
 
 import lk.ijse.carRent.dto.Reg_UserDTO;
+import lk.ijse.carRent.dto.CustomDTO;
 import lk.ijse.carRent.entity.Reg_User;
 import lk.ijse.carRent.entity.User;
 import lk.ijse.carRent.repo.Reg_UserRepo;
@@ -67,5 +68,10 @@ public class Reg_UserServiceImpl implements Reg_UserService {
 
     public Reg_UserDTO availableUser(String userName) {
         return null;
+    }
+
+    @Override
+    public CustomDTO userIdGenerate() {
+        return new CustomDTO(repo.getLastIndex());
     }
 }

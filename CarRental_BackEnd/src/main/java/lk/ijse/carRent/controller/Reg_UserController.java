@@ -1,5 +1,6 @@
 package lk.ijse.carRent.controller;
 
+import lk.ijse.carRent.dto.CustomDTO;
 import lk.ijse.carRent.dto.Name;
 import lk.ijse.carRent.dto.Reg_UserDTO;
 import lk.ijse.carRent.dto.UserDTO;
@@ -25,5 +26,11 @@ public class Reg_UserController {
         System.out.println(regUserDTO);
         service.saveUser(regUserDTO);
         return new ResponseUtil("OK", "Successfully Registered.!", null);
+    }
+
+    @ResponseStatus(HttpStatus.CREATED)
+    @GetMapping(path = "/reg_UserIdGenerate")
+    public @ResponseBody CustomDTO customerIdGenerate() {
+        return service.userIdGenerate();
     }
 }
