@@ -33,4 +33,11 @@ public class Reg_UserController {
     public @ResponseBody CustomDTO customerIdGenerate() {
         return service.userIdGenerate();
     }
+
+    @ResponseStatus(HttpStatus.CREATED)
+    @GetMapping(path = "/loadAllUsers")
+    public ResponseUtil getAllUSer(){
+        return new ResponseUtil("OK", "Successfully Loaded. :",service.getAllUser());
+    }
 }
+

@@ -59,7 +59,7 @@ function generateCustomerID(){
 function loadAllRegUsers() {
     $("#customerTable").empty();
     $.ajax({
-        url: userBaseUrl + "", method: "GET", dataType: "json", success: function (res) {
+        url: userBaseUrl + "reg_User/loadAllUsers", method: "GET", dataType: "json", success: function (res) {
             console.log(res);
 
             for (let i of res.data) {

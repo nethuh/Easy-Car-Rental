@@ -7,6 +7,7 @@ import lk.ijse.carRent.entity.User;
 import lk.ijse.carRent.repo.Reg_UserRepo;
 import lk.ijse.carRent.service.Reg_UserService;
 import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -59,7 +60,8 @@ public class Reg_UserServiceImpl implements Reg_UserService {
     }
 
     public ArrayList<Reg_UserDTO> getAllUser() {
-        return null;
+        return mapper.map(repo.findAll(), new TypeToken<ArrayList<Reg_User>>(){
+        }.getType());
     }
 
     public Reg_User searchUserId(String id) {
