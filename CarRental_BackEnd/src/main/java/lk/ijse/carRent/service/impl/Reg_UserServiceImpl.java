@@ -14,6 +14,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.io.File;
+import java.io.IOException;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 
 @Service
@@ -27,11 +29,12 @@ public class Reg_UserServiceImpl implements Reg_UserService {
 
     public void saveUser(Reg_UserDTO dto) {
 
-        Reg_User regUser = new Reg_User(dto.getUser_Id(), dto.getName(), dto.getContact_No(), dto.getAddress(), dto.getEmail(), dto.getNic(), dto.getLicense_No(), "","",new User(dto.getUser().getUser_Id(), dto.getUser().getRole_Type(),dto.getUser().getUser_Name(), dto.getUser().getPassword()));
+        Reg_User regUser = new Reg_User(dto.getUser_Id(), dto.getName(), dto.getContact_No(), dto.getAddress(), dto.getEmail(), dto.getNic(), dto.getLicense_No(), "", "", new User(dto.getUser().getUser_Id(), dto.getUser().getRole_Type(), dto.getUser().getUser_Name(), dto.getUser().getPassword()));
         if (repo.existsById(dto.getUser_Id()))
             throw new RuntimeException("User Already Exist. Please enter another id..!");
 
-        try{
+        try {
+
             String projectPath = new File(this.getClass().getProtectionDomain().getCodeSource().getLocation().toURI()).getParentFile().getParentFile().getAbsolutePath();
             File uploadsDir = new File(projectPath + "/uploads");
             System.out.println(projectPath);
@@ -43,14 +46,14 @@ public class Reg_UserServiceImpl implements Reg_UserService {
             regUser.setNic_Img("uploads/" + dto.getNic_Img().getOriginalFilename());
             regUser.setLicense_Img("uploads/" + dto.getLicense_Img().getOriginalFilename());
 
-        } catch (Exception e) {
+
+        } catch (IOException | URISyntaxException e) {
             throw new RuntimeException(e);
         }
         System.out.println(regUser);
         repo.save(regUser);
 
     }
-
     public void updateUser(Reg_UserDTO dto) {
 
     }

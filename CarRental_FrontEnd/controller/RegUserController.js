@@ -1,6 +1,9 @@
 let userBaseUrl = "http://localhost:8080/CarRental_BackEnd_war/";
 
 loadAllRegUsers();
+$("#btnSaveCustomer").attr('disabled', true);
+$("#btnUpdateCustomer").attr('disabled', true);
+$("#btnDeleteCustomer").attr('disabled', true);
 
 
 // Customer Save
