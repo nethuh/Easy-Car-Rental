@@ -39,5 +39,17 @@ public class Reg_UserController {
     public ResponseUtil getAllUSer(){
         return new ResponseUtil("OK", "Successfully Loaded. :",service.getAllUser());
     }
+
+    @ResponseStatus(HttpStatus.CREATED)
+    @PostMapping(path = "/update")
+    public ResponseUtil updateUser(@ModelAttribute Reg_UserDTO regUserDTO, @ModelAttribute UserDTO user, @ModelAttribute Name name){
+        regUserDTO.setName(name);
+        regUserDTO.setUser(user);
+        System.out.println(user);
+        System.out.println(name);
+        System.out.println(regUserDTO);
+        System.out.println(regUserDTO);
+        return new ResponseUtil("OK", "Successfully Updated. :" + regUserDTO.getUser_Id(),null);
+    }
 }
 

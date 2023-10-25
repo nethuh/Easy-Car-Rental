@@ -27,6 +27,26 @@ $("#btnSaveCustomer").click(function (){
     });
 });
 
+//Customer Update
+$("#btnUpdateCustomer").click(function (){
+    let formData = new FormData($("#customerForm")[0]);
+    console.log(formData);
+    $.ajax({
+        url: userBaseUrl + "reg_User/update",
+        method: "post",
+        data: formData,
+        contentType: false,
+        processData: false,
+        success: function (res){
+            saveUpdateAlert("User", res.message);
+            loadAllRegUsers();
+        },
+        error: function (error) {
+            unSuccessUpdateAlert("User", JSON.parse(error.responseText).message);
+        }
+    });
+});
+
 //UserId Generate
 function generateCustomerID(){
     $("#user_Id").val("C00-001");
