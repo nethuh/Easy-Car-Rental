@@ -109,3 +109,16 @@ function setTextFieldValues(firstName, lastName, contact_No, address, email, nic
     $("#firstName").focus();
     $("#btnSaveCustomer").attr('disabled', true);
 }
+
+function setButtonState(value) {
+    if (value > 0) {
+        $("#btnSaveCustomer").attr('disabled', true);
+        $("#btnUpdateCustomer").attr('disabled', true);
+        $("#btnDeleteCustomer").attr('disabled', true);
+    } else {
+        $("#btnSaveCustomer").attr('disabled', false);
+        $("#btnUpdateCustomer").attr('disabled', false);
+        $("#btnDeleteCustomer").attr('disabled', false);
+    }
+}
+
