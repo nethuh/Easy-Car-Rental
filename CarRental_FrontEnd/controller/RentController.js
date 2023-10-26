@@ -1,0 +1,1 @@
+let RentAllManageBaseUrl = "http://localhost:8080/CarRental_BackEnd_war/";
