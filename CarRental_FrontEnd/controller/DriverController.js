@@ -27,6 +27,41 @@ $("#btnSaveDriver").click(function (){
 
 });
 
+//Update Driver
+$("#btnUpdateDriver").click(function () {
+    let formData = new FormData($("#driverForm")[0]);
+    console.log(formData);
+    $.ajax({
+        url: driverBaseUrl + "",
+        method: "post",
+        data: formData,
+        contentType: false,
+        processData: false,
+        success: function (res) {
+            console.log(res)
+            saveUpdateAlert("Driver", res.message);
+            loadAllDrivers();
+        },
+        error: function (error) {
+            unSuccessUpdateAlert("Driver", JSON.parse(error.responseText).message);
+        }
+    });
+});
+
+//Delete Driver
+$("#btnDeleteDriver").click(function () {
+    let id = $("#user_Id").val();
+    $.ajax({
+        url: driverBaseUrl + "" + id , method: "delete", dataType: "json", success: function (resp) {
+            saveUpdateAlert("Driver", resp.message);
+            loadAllDrivers();
+        }, error: function (error) {
+            let message = JSON.parse(error.responseText).message;
+            unSuccessUpdateAlert("Driver", message);
+        }
+    });
+});
+
 
 //Generate DriverId
 function generateDriverID() {
