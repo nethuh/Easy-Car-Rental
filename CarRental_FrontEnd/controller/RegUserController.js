@@ -47,6 +47,21 @@ $("#btnUpdateCustomer").click(function (){
     });
 });
 
+//Customer Delete
+$("#btnDeleteCustomer").click(function () {
+    let id = $("#user_Id").val();
+    $.ajax({
+        url: userBaseUrl + "" + id + "", method: "delete", dataType: "json", success: function (resp) {
+            saveUpdateAlert("User", resp.message);
+            loadAllRegUsers();
+        }, error: function (error) {
+            let message = JSON.parse(error.responseText).message;
+            unSuccessUpdateAlert("User", message);
+        }
+    });
+});
+
+
 //UserId Generate
 function generateCustomerID(){
     $("#user_Id").val("C00-001");
