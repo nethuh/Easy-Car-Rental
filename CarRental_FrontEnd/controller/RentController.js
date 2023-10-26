@@ -136,3 +136,94 @@ $("#btnReject").on("click", function () {
     });
 
 });
+
+generatePaymentID();
+//Payment ID Generator
+function generatePaymentID() {
+    $("#paymentID").val("PAY-001");
+    $.ajax({
+        url: RentAllManageBaseUrl + "",
+        method: "GET",
+        contentType: "application/json",
+        dataType: "json",
+        success: function (resp) {
+            let id = resp.value;
+            console.log("id" + id);
+            let tempId = parseInt(id.split("-")[1]);
+            tempId = tempId + 1;
+            if (tempId <= 9) {
+                $("#paymentID").val("PAY-00" + tempId);
+            } else if (tempId <= 99) {
+                $("#paymentID").val("PAY-0" + tempId);
+            } else {
+                $("#paymentID").val("PAY-" + tempId);
+            }
+        },
+        error: function (ob, statusText, error) {
+        }
+    });
+}
+
+//Local Date And Time set , Enter Cash and Balance display
+$(document).ready(function () {
+    var now = new Date();
+    var year = now.getFullYear();
+    var month = now.getMonth() + 1;
+    var day = now.getDate();
+    var hour = now.getHours();
+    var minute = now.getMinutes();
+    var second = now.getSeconds();
+    var formattedDate = year + "-" + month.toString().padStart(2, "0") + "-" + day.toString().padStart(2, "0");
+    var formattedTime = hour.toString().padStart(2, "0") + ":" + minute.toString().padStart(2, "0") + ":" + second.toString().padStart(2, "0");
+    var date = formattedDate;
+    var time = formattedTime;
+    $('#date').val(date); // set date text in element with ID "date"
+    $('#time').val(time); // set time text in element with ID "time"
+});
+
+
+function loadAllCars() {
+    $.ajax({
+        url: RentAllManageBaseUrl + "" + carID,
+        method: "GET",
+        dataType: "json",
+        success: function (res) {
+            console.log(res);
+            $('#rentFee').val(res.rent_Duration_Price.daily_Rate);
+            let mileagePrice = res.price_Extra_KM;
+            let freeMileage = res.free_Mileage;
+
+            $(document).on("change keyup blur","#days,#lostDamage,#rentFee,#driverFee,#mileage", function () {
+
+                 // Payment Details
+                let lostDamage = $('#lostDamage').val();
+                let carFee = $('#rentFee').val();
+                let driverFee = $('#driverFee').val();
+                let mileage = $('#mileage').val();
+                let days = $('#days').val();
+                let mileageCost;
+                let m = parseFloat(mileage) / parseFloat(days);
+                console.log(m);
+                if (m => freeMileage) {
+                    let mileageSize = parseFloat(mileage) - (parseFloat(days)*parseFloat(freeMileage));
+                    mileageCost = parseFloat(mileageSize) * parseFloat(mileagePrice);
+
+                    let carTotal = parseFloat(carFee) * parseFloat(days);
+                    let driverTotal = parseFloat(driverFee) * parseFloat(days);
+
+                    $("#total").val(parseFloat(lostDamage) + parseFloat(carTotal) + parseFloat(driverTotal) + mileageCost);
+
+                }
+                if (m < freeMileage) {
+
+                    let carTotal = parseFloat(carFee) * parseFloat(days);
+                    let driverTotal = parseFloat(driverFee) * parseFloat(days);
+
+                    $("#total").val(parseFloat(lostDamage) + parseFloat(carTotal) + parseFloat(driverTotal));
+                }
+            });
+
+        }
+    });
+}
+
