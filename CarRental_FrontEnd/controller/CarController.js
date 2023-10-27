@@ -1,4 +1,5 @@
 let carBaseUrl = "http://localhost:8080/CarRental_BackEnd_war/";
+loadAllCars();
 
 $("#btnSaveCar").attr('disabled', true);
 $("#btnUpdateCar").attr('disabled', true);
@@ -29,7 +30,7 @@ $("#btnSaveCar").click(function () {
 function generateCarID() {
     $("#car_Id").val("CAR-001");
     $.ajax({
-        url: carBaseUrl + "",
+        url: carBaseUrl + "car/carIDGenerate",
         contentType: "application/json",
         dataType: "json",
         success: function (resp) {
@@ -90,7 +91,7 @@ $("#btnDeleteCar").click(function () {
 function loadAllCars() {
     $("#carTable").empty();
     $.ajax({
-        url: carBaseUrl + "", method: "GET", dataType: "json", success: function (res) {
+        url: carBaseUrl + "car/loadAllCars", method: "GET", dataType: "json", success: function (res) {
             console.log(res);
 
             for (let i of res.data) {
