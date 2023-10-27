@@ -4,6 +4,7 @@ import lk.ijse.carRent.dto.CustomDTO;
 import lk.ijse.carRent.dto.Name;
 import lk.ijse.carRent.dto.Reg_UserDTO;
 import lk.ijse.carRent.dto.UserDTO;
+import lk.ijse.carRent.entity.Reg_User;
 import lk.ijse.carRent.service.Reg_UserService;
 import lk.ijse.carRent.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,6 +51,19 @@ public class Reg_UserController {
         System.out.println(regUserDTO);
         System.out.println(regUserDTO);
         return new ResponseUtil("OK", "Successfully Updated. :" + regUserDTO.getUser_Id(),null);
+    }
+
+    @ResponseStatus
+    @DeleteMapping(params = {"id"})
+    public ResponseUtil deleteUser(@RequestParam String id){
+        service.deleteUser(id);
+        return new ResponseUtil("OK", "Successfully Deleted. :" + id, null);
+    }
+
+    @ResponseStatus
+    @GetMapping(path = "/searchCustomer", params = {"cus_Id"})
+    public Reg_User searchDriverId(String cus_Id){
+        return service.searchUserId(cus_Id);
     }
 }
 
