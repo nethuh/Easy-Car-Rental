@@ -227,3 +227,62 @@ function loadAllCars() {
     });
 }
 
+
+$("#btnPay").on("click", function () {
+    let paymentId = $("#paymentID").val();
+    let rentID = $("#rentID").val();
+    let paymentType = $("#paymentType").val();
+    let paymentDate = $("#date").val();
+    let paymentTime = $("#time").val();
+    let lostDamage = $("#lostDamage").val();
+    let carFee = $("#rentFee").val();
+    let driverFee = $("#driverFee").val();
+    let total = $("#total").val();
+
+    var paymentOb = {
+        paymentID: paymentId,
+        rentID: {
+            rentID: rentID
+        },
+        paymentType: paymentType,
+        date: paymentDate,
+        time: paymentTime,
+        lostDamage: lostDamage,
+        rentFee: carFee,
+        driverFee: driverFee,
+        total: total,
+    }
+
+
+    $.ajax({
+        url: RentAllManageBaseUrl + "" + rentID,
+        method: "POST",
+        data: JSON.stringify(paymentOb),
+        dataType: "json",
+        contentType: "application/json",
+        success: function (res) {
+            console.log(res)
+            saveUpdateAlert("Payment", res.message);
+            generatePaymentID();
+        },
+        error: function (error) {
+            unSuccessUpdateAlert("Payment", JSON.parse(error.responseText).message);
+        }
+    });
+});
+
+$.ajax({
+    url: RentAllManageBaseUrl + "",
+    method: "GET",
+    dataType: "json",
+    contentType: "application/json",
+    success: function (res) {
+        console.log(res.data);
+        for (let i of res.data) {
+            let row = "<tr><td>" + i.paymentID + "</td><td>" + i.rentID.rentID + "</td><td>" + i.rentID.regUser.user_Id + "</td><td>" + i.paymentType + "</td><td>" + i.date + "</td><td>" + i.time + "</td><td>" + i.total + "</td></tr>";
+            $("#paymentTable").append(row);
+        }
+    },
+    error: function (error) {
+    }
+});
