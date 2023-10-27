@@ -142,7 +142,7 @@ generatePaymentID();
 function generatePaymentID() {
     $("#paymentID").val("PAY-001");
     $.ajax({
-        url: RentAllManageBaseUrl + "",
+        url: RentAllManageBaseUrl + "payment/paymentIdGenerate",
         method: "GET",
         contentType: "application/json",
         dataType: "json",
@@ -272,7 +272,7 @@ $("#btnPay").on("click", function () {
 });
 
 $.ajax({
-    url: RentAllManageBaseUrl + "",
+    url: RentAllManageBaseUrl + "payment",
     method: "GET",
     dataType: "json",
     contentType: "application/json",

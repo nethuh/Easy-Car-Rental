@@ -370,19 +370,22 @@ h6 {
 @media (min-width: 1200px) {
     .logo {
         width: 280px;
+
     }
+
 }
 
 .logo span {
     font-size: 28px;
     font-weight: bolder;
     color: #000000;
-    font-family: "Inter", sans-serif;
+    font-family: Garamond, serif;
     margin-left: 10px;
 }
 
 .logo span span {
     color: #eea909;
+    font-family: Garamond, serif;
 }
 
 .header {
@@ -392,6 +395,7 @@ h6 {
     box-shadow: 0 2px 20px rgba(1, 41, 112, 0.1);
     background-color: #fff;
     padding-left: 20px;
+
 }
 
 .header .toggle-sidebar-btn {
@@ -553,17 +557,19 @@ h6 {
 --------------------------------------------------------------*/
 .sidebar {
     position: fixed;
-    top: 60px;
-    left: 0;
+    top: 69px;
+    left: 14px;
     bottom: 0;
-    width: 300px;
+    width: 255px;
+    height: 691px;
     z-index: 996;
     transition: all 0.3s;
     padding: 20px;
     overflow-y: auto;
     scrollbar-width: thin;
+    border-radius: 10px;
     scrollbar-color: #aab7cf transparent;
-    box-shadow: 0 0 20px rgba(1, 41, 112, 0.1);
+    box-shadow: 0 0 20px rgba(16, 16, 16, 0.82);
     background-image: linear-gradient(to right, #2B2B2B, rgba(0, 0, 0, 0.91));
     /*background-image: linear-gradient(to right, #3C3F41, #2B2B2B);*/
 }
@@ -579,8 +585,8 @@ h6 {
 }
 .sidebar-nav {
     padding: 0;
-    margin: 0;
     list-style: none;
+    margin-top: 50px;
 }
 @media (min-width: 1200px) {
 
@@ -633,12 +639,12 @@ margin-top: 20px;
 .sidebar-nav .nav-link i {
     font-size: 16px;
     margin-right: 10px;
-    color: #01132a;
+    color: #eea909;
 }
 
 .sidebar-nav .nav-link.collapsed {
-    color: #012970;
-    background: #fff;
+    color: #ffffff;
+
 }
 
 .sidebar-nav .nav-link.collapsed i {
@@ -659,8 +665,8 @@ margin-top: 20px;
     padding: 10px 15px;
     border-radius: 6px;
     text-decoration: none;
-    color: #01132a;
-    background: white;
+    color: #ffffff;
+    /*background: white;*/
     display: flex;
     align-items: center;
     font-size: 15px;

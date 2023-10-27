@@ -85,7 +85,10 @@ public class Reg_UserServiceImpl implements Reg_UserService {
     }
 
     public void deleteUser(String reg_ID) {
-
+        if (!repo.existsById(reg_ID)){
+            throw new RuntimeException("Wrong ID..Please enter valid id..!");
+        }
+        repo.deleteById(reg_ID);
     }
 
     public ArrayList<Reg_UserDTO> getAllUser() {
@@ -94,7 +97,11 @@ public class Reg_UserServiceImpl implements Reg_UserService {
     }
 
     public Reg_User searchUserId(String id) {
-        return null;
+       if (!repo.existsById(id)){
+           throw new RuntimeException("Wrong ID. Please enter Valid id..!");
+       }
+        System.out.println(id);
+       return mapper.map(repo.findById(id).get(), Reg_User.class);
     }
 
     public Reg_UserDTO availableUser(String userName) {
