@@ -12,6 +12,7 @@ $.ajax({
     }
 });
 
+//Rent Details
 loadAllRent();
 function loadAllRent() {
     $.ajax({
