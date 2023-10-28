@@ -1,7 +1,9 @@
 package lk.ijse.carRent.controller;
 
 import lk.ijse.carRent.dto.CustomDTO;
+import lk.ijse.carRent.dto.RentDTO;
 import lk.ijse.carRent.service.RentService;
+import lk.ijse.carRent.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -17,5 +19,19 @@ public class RentController {
     @GetMapping(path = "/rentIdGenerate")
     public @ResponseBody CustomDTO customerIdGenerate(){
         return service.rentIdGenerate();
+    }
+
+    @ResponseStatus(HttpStatus.CREATED)
+    @PostMapping
+    public ResponseUtil placeOrder(@RequestBody RentDTO dto){
+       service.bookingCars(dto);
+       return new ResponseUtil("Ok", "Successfully Purchased.!", null);
+    }
+
+    @ResponseStatus(HttpStatus.CREATED)
+    @GetMapping(path = "/loadAllRents")
+    public ResponseUtil getAllRents(){
+        System.out.println(service.getAllRent());
+        return new ResponseUtil("OK", "Successfully Loaded. :", service.getAllRent());
     }
 }

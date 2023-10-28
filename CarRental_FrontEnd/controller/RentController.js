@@ -34,7 +34,7 @@ function loadAllRentDetails() {
     $("#rentAllDetails").empty();
     $("#retManage").empty();
     $.ajax({
-        url: RentAllManageBaseUrl + "",
+        url: RentAllManageBaseUrl + "rent/loadAllRents",
         method: "get",
         contentType: "application/json",
         dataType: "json",
