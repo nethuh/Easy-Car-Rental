@@ -27,4 +27,9 @@ public class LoginController {
         CurrentUser.currentUser=service.getRegUsers(username,password);
         return new ResponseUtil("OK","Successfully Loaded..!","");
     }
+
+    @GetMapping(path = "current")
+    public ResponseUtil getCurrentUser(){
+        return new ResponseUtil("OK","Successfully Loaded..!",CurrentUser.currentUser);
+    }
 }

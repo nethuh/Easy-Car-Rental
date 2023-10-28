@@ -66,3 +66,120 @@ $("#car_Id").click(function () {
         }
     })
 });
+
+//Current user
+let user;
+$.ajax({
+    url: RentbaseUrl + "loginForm/current", method: "get", success: function (res) {
+        user = res.data.user_Id;
+        console.log(res.data)
+        $("#user_Id").val(res.data.user_Id);
+    }
+});
+
+//Current User Profile
+$.ajax({
+    url: RentbaseUrl + "reg_User/loadAllUsers",
+    method: "get",
+    contentType: "application/json",
+    dataType: "json",
+    success: function (res) {
+        for (var cus of res.data) {
+            if (user === cus.user_Id) {
+                $("#cusUserID").val(cus.user_Id);
+                $("#userFirstName").val(cus.name.firstName);
+                $("#userLastName").val(cus.name.lastName);
+                $("#customerContactNo").val(cus.contact_No);
+                $("#customerAddress").val(cus.address);
+                $("#customerDriverEmail").val(cus.email);
+                $("#customerNic").val(cus.nic);
+                $("#customerLicence").val(cus.license_No);
+                $("#customerUserName").val(cus.user.user_Name);
+                $("#customerPassword").val(cus.user.password);
+                let urlone = cus.nic_Img;
+                let urltwo = cus.license_Img;
+                $("#photoImg1").css({
+                    "background": `url(${RentbaseUrl + urlone})`, "background-size": "cover"
+                });
+                $("#photoImg2").css({
+                    "background": `url(${RentbaseUrl + urltwo})`, "background-size": "cover"
+                });
+            }
+        }
+    }
+});
+
+//Current User Update
+$("#updateCustomer").click(function () {
+    let formData = new FormData($("#customerDetailsForm")[0]);
+    console.log(formData);
+    $.ajax({
+        url: RentbaseUrl + "reg_User/update",
+        method: "post",
+        data: formData,
+        contentType: false,
+        processData: false,
+        success: function (res) {
+            saveUpdateAlert("User", res.message);
+            loadAllRegUsers();
+        },
+        error: function (error) {
+            unSuccessUpdateAlert("User", JSON.parse(error.responseText).message);
+        }
+    });
+});
+
+
+$("#userFirstName").focus();
+const regExFirstName = /^[A-z ]{3,20}$/;
+const regExLastName = /^[A-z ]{3,20}$/;
+const regExContactNum = /^(07(0|1|2|4|5|6|7|8)[0-9]{7})$/;
+const regExCusAddress = /^[A-z0-9/ ]{4,30}$/;
+const regExEmailCusAddress = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+const regExNIC = /^([0-9]{12}|[0-9V]{10})$/;
+const regExDrivingNIC = /^[A-Z0-9-]+$/;
+const regExUserName = /^[A-z0-9/ ]{4,30}$/;
+const regExPassword = /^([A-Z a-z]{5,15}[0-9]{1,10})$/;
+
+let customerValidations = [];
+customerValidations.push({
+    reg: regExFirstName, field: $('#userFirstName'), error: 'Customer First Name Pattern is Wrong'
+});
+customerValidations.push({
+    reg: regExLastName, field: $('#userLastName'), error: 'Customer Last Name Pattern is Wrong'
+});
+customerValidations.push({
+    reg: regExContactNum, field: $('#customerContactNo'), error: 'Customer Contact Number Pattern is Wrong'
+});
+customerValidations.push({
+    reg: regExCusAddress, field: $('#customerAddress'), error: 'Customer Address Pattern is Wrong'
+});
+customerValidations.push({
+    reg: regExEmailCusAddress, field: $('#customerDriverEmail'), error: 'Customer Email Address Pattern is Wrong'
+});
+customerValidations.push({
+    reg: regExNIC, field: $('#customerNic'), error: 'Customer NIC Pattern is Wrong'
+});
+customerValidations.push({
+    reg: regExDrivingNIC, field: $('#customerLicence'), error: 'Customer Driving License Pattern is Wrong'
+});
+customerValidations.push({
+    reg: regExUserName, field: $('#customerUserName'), error: 'Customer User Name Pattern is Wrong'
+});
+customerValidations.push({
+    reg: regExPassword, field: $('#customerPassword'), error: 'Customer Password Pattern is Wrong'
+});
+//disable tab key of all four text fields using grouping selector in CSS
+$("#userFirstName,#userLastName,#customerContactNo,#customerAddress,#customerDriverEmail,#customerNic,#customerLicence,#customerUserName,#customerPassword").on('keydown', function (event) {
+    if (event.key === "Tab") {
+        event.preventDefault();
+    }
+});
+
+$("#userFirstName,#userLastName,#customerContactNo,#customerAddress,#customerDriverEmail,#customerNic,#customerLicence,#customerUserName,#customerPassword").on('keyup', function (event) {
+    checkValidity(customerValidations);
+});
+
+$("#userFirstName,#userLastName,#customerContactNo,#customerAddress,#customerDriverEmail,#customerNic,#customerLicence,#customerUserName,#customerPassword").on('blur', function (event) {
+    checkValidity(customerValidations);
+});
