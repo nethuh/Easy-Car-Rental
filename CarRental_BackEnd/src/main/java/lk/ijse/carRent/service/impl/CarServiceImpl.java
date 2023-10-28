@@ -86,12 +86,19 @@ public class CarServiceImpl implements CarService {
     }
 
     @Override
+    public CustomDTO getSumCar() {
+        return new CustomDTO(repo.getSumCar());
+    }
+
+    @Override
     public ArrayList<CarDTO> getFilerData(String type, String fuelType) {
-        return null;
+        return mapper.map(repo.filterCar(type,fuelType), new TypeToken<ArrayList<Car>>(){
+        }.getType());
     }
 
     @Override
     public ArrayList<CarDTO> filterCarDetails(String name, String fuel_Type, String type, String transmission_Type) {
-        return null;
+        return mapper.map(repo.filterCarDetails(name, fuel_Type, type, transmission_Type), new TypeToken<ArrayList<Car>>(){
+        }.getType());
     }
 }

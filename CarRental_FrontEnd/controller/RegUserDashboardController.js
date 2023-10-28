@@ -75,7 +75,7 @@ $("#fuel_Type").click(function () {
     console.log(fuel_Type);
     $("#car_Id").empty();
     $.ajax({
-        url: RentbaseUrl + "" + category_type + "" + fuel_Type,
+        url: RentbaseUrl + "car/filterCarDetails/?category_type=" + category_type + "&fuel_Type=" + fuel_Type,
         method: "GET",
         contentType: "application/json",
         dataType: "json",

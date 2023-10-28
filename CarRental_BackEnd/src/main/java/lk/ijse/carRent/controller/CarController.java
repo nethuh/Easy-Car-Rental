@@ -11,6 +11,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+
 @RestController
 @CrossOrigin
 @RequestMapping("/car")
@@ -44,5 +46,23 @@ public class CarController {
     @GetMapping(path = "/searchCar", params = {"car_Id"})
     public Car searchCusId(String car_Id){
         return service.searchCarId(car_Id);
+    }
+
+    @ResponseStatus(HttpStatus.CREATED)
+    @GetMapping(path = "/carCount")
+    public @ResponseBody CustomDTO getSumCustomer(){
+        return service.getSumCar();
+    }
+
+    @ResponseStatus(HttpStatus.CREATED)
+    @GetMapping(path = "/filterCarDetails", params = {"category_type", "fuel_Type"})
+    public ArrayList<CarDTO> getFilerData(@RequestParam String category_type, @RequestParam String fuel_Type) {
+        return service.getFilerData(category_type, fuel_Type);
+    }
+
+    @ResponseStatus(HttpStatus.CREATED)
+    @GetMapping(path = "/filterDetails", params = {"name", "fuel_Type","type", "transmission_Type"})
+    public ArrayList<CarDTO> filterCarDetails(@RequestParam String name, @RequestParam String fuel_Type,@RequestParam String type, @RequestParam String transmission_Type) {
+        return service.filterCarDetails(name, fuel_Type,type,transmission_Type);
     }
 }
