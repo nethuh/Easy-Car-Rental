@@ -32,7 +32,7 @@ $("#btnUpdateDriver").click(function () {
     let formData = new FormData($("#driverForm")[0]);
     console.log(formData);
     $.ajax({
-        url: driverBaseUrl + "",
+        url: driverBaseUrl + "driver/update",
         method: "post",
         data: formData,
         contentType: false,
@@ -52,7 +52,7 @@ $("#btnUpdateDriver").click(function () {
 $("#btnDeleteDriver").click(function () {
     let id = $("#user_Id").val();
     $.ajax({
-        url: driverBaseUrl + "" + id , method: "delete", dataType: "json", success: function (resp) {
+        url: driverBaseUrl + "driver?id=" + id , method: "delete", dataType: "json", success: function (resp) {
             saveUpdateAlert("Driver", resp.message);
             loadAllDrivers();
         }, error: function (error) {
@@ -88,6 +88,45 @@ function generateDriverID() {
         }
     });
 }
+
+//Search id and Load Table
+$("#search_Id").on("keypress", function (event) {
+    if (event.which === 13) {
+        var search = $("#search_Id").val();
+        $("#driverTable").empty();
+        $.ajax({
+            url: driverBaseUrl + "driver/searchDriver/?driver_Id="+ search,
+            method: "GET",
+            contentType: "application/json",
+            dataType: "json",
+            success: function (res) {
+                console.log(res);
+                $("#user_Id").val(res.user_Id);
+                $("#firstName").val(res.name.firstName);
+                $("#lastName").val(res.name.lastName);
+                $("#contact_No").val(res.contact_No);
+                $("#address").val(res.address);
+                $("#email").val(res.email);
+                $("#nic_No").val(res.nic_No);
+                $("#license_No").val(res.license_No);
+                $("#license_Img").prop(res.license_Img);
+                $("#driverAvailability").val(res.driverAvailability);
+                $("#role_Type").val(res.user.role_Type);
+                $("#user_Name").val(res.user.user_Name);
+                $("#password").val(res.user.password);
+                let row = "<tr><td>" + res.user_Id + "</td><td>" + res.name.firstName + "</td><td>" + res.name.lastName + "</td><td>" + res.contact_No + "</td><td>" + res.address + "</td><td>" + res.email + "</td><td>" + res.nic_No + "</td><td>" + res.license_No + "</td><td>" + res.driverAvailability + "</td><td>" + res.user.role_Type + "</td><td>" + res.user.user_Name + "</td><td>" + res.user.password + "</td></tr>";
+                $("#driverTable").append(row);
+            },
+            error: function (error) {
+                loadAllDrivers();
+                let message = JSON.parse(error.responseText).message;
+                emptyMassage(message);
+            }
+        })
+    }
+
+});
+
 
 //load all drivers
 function loadAllDrivers() {
