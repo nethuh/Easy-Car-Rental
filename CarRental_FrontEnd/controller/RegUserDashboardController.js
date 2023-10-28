@@ -190,7 +190,7 @@ function blindClickEvents() {
 $("#btnDeleteRental").click(function () {
     let id = $("#responseRentId").val();
     $.ajax({
-        url: RentbaseUrl + "" + id , method: "delete", dataType: "json", success: function (resp) {
+        url: RentbaseUrl + "rent?id=" + id , method: "delete", dataType: "json", success: function (resp) {
             saveUpdateAlert("Rent", resp.message);
             loadAllRent();
         }, error: function (error) {

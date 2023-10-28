@@ -14,4 +14,5 @@ public interface Reg_UserService {
     Reg_User searchUserId(String id);
     Reg_UserDTO availableUser(String userName);
     CustomDTO userIdGenerate();
+    CustomDTO getSumUser();
 }

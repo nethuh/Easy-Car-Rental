@@ -112,4 +112,9 @@ public class Reg_UserServiceImpl implements Reg_UserService {
     public CustomDTO userIdGenerate() {
         return new CustomDTO(repo.getLastIndex());
     }
+
+    @Override
+    public CustomDTO getSumUser() {
+        return new CustomDTO(repo.getSumUsers());
+    }
 }

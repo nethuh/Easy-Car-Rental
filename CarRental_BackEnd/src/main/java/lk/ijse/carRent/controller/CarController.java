@@ -5,6 +5,7 @@ import lk.ijse.carRent.dto.CustomDTO;
 import lk.ijse.carRent.dto.ImageDTO;
 import lk.ijse.carRent.dto.Rate;
 import lk.ijse.carRent.entity.Car;
+import lk.ijse.carRent.entity.Image;
 import lk.ijse.carRent.service.CarService;
 import lk.ijse.carRent.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,6 +31,24 @@ public class CarController {
         return new ResponseUtil("OK", "Successfully Registered.!", null);
     }
 
+    @ResponseStatus(HttpStatus.CREATED)
+    @PostMapping(path = "/update")
+    public ResponseUtil updateCar(@ModelAttribute CarDTO dto, @ModelAttribute Rate rate, @ModelAttribute ImageDTO image) {
+        dto.setImage(image);
+        dto.setRent_Duration_Price(rate);
+        System.out.println(dto.getName());
+        System.out.println(dto.getCar_Id());
+        System.out.println(dto);
+        service.updateCar(dto);
+        return new ResponseUtil("OK", "Successfully Updated. :" + dto.getCar_Id(), null);
+    }
+
+    @ResponseStatus(HttpStatus.CREATED)
+    @DeleteMapping(params = {"id"})
+    public ResponseUtil deleteCar(@RequestParam String id){
+        service.deleteCar(id);
+        return new ResponseUtil("OK", "Successfully Deleted. :" + id, null);
+    }
     @ResponseStatus(HttpStatus.CREATED)
     @GetMapping(path = "/carIDGenerate")
     public @ResponseBody CustomDTO customerIdGenerate() {
@@ -76,5 +95,17 @@ public class CarController {
     @GetMapping(path = "/reservedCarCount")
     public @ResponseBody CustomDTO getSumReservedCar(){
         return service.getSumReservedCar();
+    }
+
+    @ResponseStatus(HttpStatus.CREATED)
+    @GetMapping(path = "/maintainCar")
+    public @ResponseBody CustomDTO getSumMaintainCar(){
+        return service.getSumMaintainCar();
+    }
+
+    @ResponseStatus(HttpStatus.CREATED)
+    @GetMapping(path = "/underMaintainCar")
+    public @ResponseBody CustomDTO getSumUnderMaintainCar(){
+        return service.getSumUnderMaintainCar();
     }
 }

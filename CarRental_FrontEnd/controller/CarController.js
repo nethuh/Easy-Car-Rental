@@ -56,7 +56,7 @@ $("#btnUpdateCar").click(function () {
     let formData = new FormData($("#carForm")[0]);
     console.log(formData);
     $.ajax({
-        url: carBaseUrl + "",
+        url: carBaseUrl + "car/update",
         method: "post",
         data: formData,
         contentType: false,
@@ -76,7 +76,7 @@ $("#btnUpdateCar").click(function () {
 $("#btnDeleteCar").click(function () {
     let id = $("#car_Id").val();
     $.ajax({
-        url: carBaseUrl + "" + id + "", method: "delete", dataType: "json", success: function (resp) {
+        url: carBaseUrl + "car?id=" + id + "", method: "delete", dataType: "json", success: function (resp) {
             saveUpdateAlert("Car", resp.message);
             loadAllCars();
         }, error: function (error) {

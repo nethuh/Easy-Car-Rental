@@ -43,27 +43,34 @@ public class Reg_UserController {
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping(path = "/update")
-    public ResponseUtil updateUser(@ModelAttribute Reg_UserDTO regUserDTO, @ModelAttribute UserDTO user, @ModelAttribute Name name){
+    public ResponseUtil updateUser(@ModelAttribute Reg_UserDTO regUserDTO, @ModelAttribute UserDTO user, @ModelAttribute Name name) {
         regUserDTO.setName(name);
         regUserDTO.setUser(user);
         System.out.println(user);
         System.out.println(name);
         System.out.println(regUserDTO);
-        System.out.println(regUserDTO);
-        return new ResponseUtil("OK", "Successfully Updated. :" + regUserDTO.getUser_Id(),null);
+        service.updateUser(regUserDTO);
+        return new ResponseUtil("OK", "Successfully Updated. :" + regUserDTO.getUser_Id(), null);
     }
 
-    @ResponseStatus
+    @ResponseStatus(HttpStatus.CREATED)
     @DeleteMapping(params = {"id"})
     public ResponseUtil deleteUser(@RequestParam String id){
         service.deleteUser(id);
         return new ResponseUtil("OK", "Successfully Deleted. :" + id, null);
     }
 
-    @ResponseStatus
+    @ResponseStatus(HttpStatus.CREATED)
     @GetMapping(path = "/searchCustomer", params = {"cus_Id"})
     public Reg_User searchDriverId(String cus_Id){
         return service.searchUserId(cus_Id);
     }
+
+    @ResponseStatus(HttpStatus.CREATED)
+    @GetMapping(path = "/customerCount")
+    public @ResponseBody CustomDTO getSumCustomer(){
+        return service.getSumUser();
+    }
 }
+
 

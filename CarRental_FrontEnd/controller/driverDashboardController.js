@@ -16,7 +16,7 @@ $.ajax({
 loadAllRent();
 function loadAllRent() {
     $.ajax({
-        url: userbasurl + "",
+        url: userbasurl + "rent/loadAllRents",
         method: "get",
         contentType: "application/json",
         dataType: "json",
