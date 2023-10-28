@@ -14,18 +14,18 @@ function login(){
         contentType: "application/json",
         dataType: "json",
         success: function (res){
-            for (var login of res.data){
-                if (loginRole_Type === login.role_Type && loginUserName === login.user_Name && loginPassword === login.password){
-                    if (loginRole_Type === "DRIVER" && loginUserName === login.role_Type && loginPassword === login.password){
+            for (var login of res.data) {
+                if (loginRole_Type === login.role_Type && loginUserName === login.user_Name && loginPassword === login.password) {
+                    if (loginRole_Type === "DRIVER" && loginUserName === login.user_Name && loginPassword === login.password) {
                         $.ajax({
                             url: baseUrlLogin + "loginForm/?username=" + loginUserName + "&password=" + loginPassword,
                             data:res.data,
                             method:"get",
-                            success:function (res1){
-
+                            success:function (res1) {
                             }
                         })
-                        window.location.href ='driverDashboard.html';
+                        window.location.href = 'driverDashboard.html';
+
 
 
                     }else if (loginRole_Type === "REGISTERED_USER" && loginUserName === login.user_Name && loginPassword === login.password){

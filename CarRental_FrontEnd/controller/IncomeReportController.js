@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     $.ajax({
-        url: baseUrlIncome + "", method: "GET", dataType: "json", success: function (res) {
+        url: baseUrlIncome + "income/dailyIncome", method: "GET", dataType: "json", success: function (res) {
             console.log(res);
             for (let i = 0; i < res.length; i++) {
                 let date = res[i][0];
@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
       //Monthly Income
 
     $.ajax({
-        url: baseUrlIncome + "", method: "GET", dataType: "json", success: function (res) {
+        url: baseUrlIncome + "income/monthlyIncome", method: "GET", dataType: "json", success: function (res) {
             console.log(res);
             for (let i = 0; i < res.length; i++) {
                 let date = res[i][0];
@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
      //Annually Income
 
     $.ajax({
-        url: baseUrlIncome + "", method: "GET", dataType: "json", success: function (res) {
+        url: baseUrlIncome + "income/AnnuallyIncome", method: "GET", dataType: "json", success: function (res) {
             console.log(res);
             for (let i = 0; i < res.length; i++) {
                 let date = res[i][0];

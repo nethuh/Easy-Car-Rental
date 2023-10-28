@@ -3,7 +3,7 @@ let userbasurl = "http://localhost:8080/CarRental_BackEnd_war/";
 let user;
 
 $.ajax({
-    url: userbasurl + "",
+    url: userbasurl + "loginForm/current",
     method: "get",
     success: function (res) {
         user = res.data.user_Id;
