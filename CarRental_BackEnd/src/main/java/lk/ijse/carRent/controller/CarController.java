@@ -65,4 +65,16 @@ public class CarController {
     public ArrayList<CarDTO> filterCarDetails(@RequestParam String name, @RequestParam String fuel_Type,@RequestParam String type, @RequestParam String transmission_Type) {
         return service.filterCarDetails(name, fuel_Type,type,transmission_Type);
     }
+
+    @ResponseStatus(HttpStatus.CREATED)
+    @GetMapping(path = "/availablCarCount")
+    public @ResponseBody CustomDTO getSumAvailableCar(){
+        return service.getSumAvailableCar();
+    }
+
+    @ResponseStatus(HttpStatus.CREATED)
+    @GetMapping(path = "/reservedCarCount")
+    public @ResponseBody CustomDTO getSumReservedCar(){
+        return service.getSumReservedCar();
+    }
 }

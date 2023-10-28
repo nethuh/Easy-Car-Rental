@@ -14,6 +14,8 @@ public interface CarService {
     CustomDTO carIdGenerate();
     Car searchCarId(String id);
     CustomDTO getSumCar();
+    CustomDTO getSumAvailableCar();
+    CustomDTO getSumReservedCar();
     ArrayList<CarDTO> getFilerData(String type,String fuelType);
     ArrayList<CarDTO> filterCarDetails(String name, String fuel_Type,String type, String transmission_Type);
 }
