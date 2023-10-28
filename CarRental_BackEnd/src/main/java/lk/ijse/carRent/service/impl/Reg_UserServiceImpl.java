@@ -92,7 +92,7 @@ public class Reg_UserServiceImpl implements Reg_UserService {
     }
 
     public ArrayList<Reg_UserDTO> getAllUser() {
-        return mapper.map(repo.findAll(), new TypeToken<ArrayList<Reg_User>>(){
+        return mapper.map(repo.findAll(), new TypeToken<ArrayList<Reg_User>>() {
         }.getType());
     }
 
@@ -105,7 +105,7 @@ public class Reg_UserServiceImpl implements Reg_UserService {
     }
 
     public Reg_UserDTO availableUser(String userName) {
-        return null;
+        return repo.availableUser(userName);
     }
 
     @Override
