@@ -35,7 +35,7 @@ function loadAllRent() {
 
 
 $.ajax({
-    url: userbasurl + "",
+    url: userbasurl + "driver/loadAllDrivers",
     method: "get",
     contentType: "application/json",
     dataType: "json",

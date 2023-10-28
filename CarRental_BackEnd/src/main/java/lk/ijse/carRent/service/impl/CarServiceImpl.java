@@ -79,7 +79,10 @@ public class CarServiceImpl implements CarService {
 
     @Override
     public Car searchCarId(String id) {
-        return null;
+        if (!repo.existsById(id)){
+            throw new RuntimeException("Wrong ID. Please enter Valid id..!");
+        }
+        return mapper.map(repo.findById(id).get(), Car.class);
     }
 
     @Override

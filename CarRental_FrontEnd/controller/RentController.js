@@ -184,7 +184,7 @@ $(document).ready(function () {
 
 function loadAllCars() {
     $.ajax({
-        url: RentAllManageBaseUrl + "" + carID,
+        url: RentAllManageBaseUrl + "car/searchCar/?car_Id=" + carID,
         method: "GET",
         dataType: "json",
         success: function (res) {

@@ -4,6 +4,7 @@ import lk.ijse.carRent.dto.CarDTO;
 import lk.ijse.carRent.dto.CustomDTO;
 import lk.ijse.carRent.dto.ImageDTO;
 import lk.ijse.carRent.dto.Rate;
+import lk.ijse.carRent.entity.Car;
 import lk.ijse.carRent.service.CarService;
 import lk.ijse.carRent.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,5 +38,11 @@ public class CarController {
     @GetMapping(path = "/loadAllCars")
     public ResponseUtil getAllCar() {
         return new ResponseUtil("OK", "Successfully Loaded. :", service.getAllCar());
+    }
+
+    @ResponseStatus(HttpStatus.CREATED)
+    @GetMapping(path = "/searchCar", params = {"car_Id"})
+    public Car searchCusId(String car_Id){
+        return service.searchCarId(car_Id);
     }
 }
