@@ -100,7 +100,7 @@ $("#btnAccept").on("click", function () {
     let rentID = $("#requestRentId").val();
     let driverID = $("#driverId").val();
     $.ajax({
-        url: RentAllManageBaseUrl + "" + rentID + "" + driverID,
+        url: RentAllManageBaseUrl + "rent/rentConform/?rentID=" + rentID + "&driverId=" + driverID,
         method: "post",
         dataType: "json",
         success: function (res) {
@@ -121,7 +121,7 @@ $("#btnReject").on("click", function () {
     let rentID = $("#requestRentId").val();
     let driverID = $("#driverId").val();
     $.ajax({
-        url: RentAllManageBaseUrl + "" + rentID + "" + driverID,
+        url: RentAllManageBaseUrl + "rent/rentReject/?rentID=" + rentID + "&driverId=" + driverID,
         method: "post",
         dataType: "json",
         success: function (res) {
@@ -255,7 +255,7 @@ $("#btnPay").on("click", function () {
 
 
     $.ajax({
-        url: RentAllManageBaseUrl + "" + rentID,
+        url: RentAllManageBaseUrl + "payment/?rentID=" + rentID,
         method: "POST",
         data: JSON.stringify(paymentOb),
         dataType: "json",

@@ -34,4 +34,24 @@ public class RentController {
         System.out.println(service.getAllRent());
         return new ResponseUtil("OK", "Successfully Loaded. :", service.getAllRent());
     }
+
+    @ResponseStatus(HttpStatus.CREATED)
+    @PostMapping(path = "/rentReject", params = {"rentID", "driverId"})
+    public ResponseUtil bookingReject(@RequestParam String rentID, @RequestParam String driverId){
+        service.bookingReject(rentID, driverId);
+        return new ResponseUtil("OK", "Successfully Conformed.!", null);
+    }
+
+    @ResponseStatus(HttpStatus.CONTINUE)
+    @PostMapping(path = "/rentConform", params = {"rentID", "driverId"})
+    public ResponseUtil bookingConform(@RequestParam String rentID, @RequestParam String driverId){
+        service.bookingConform(rentID, driverId);
+        return new ResponseUtil("OK", "Successfully Conformed.!", null);
+    }
+
+    @ResponseStatus(HttpStatus.CREATED)
+    @GetMapping(path = "/booking")
+    public @ResponseBody CustomDTO getSumOfBooking(){
+        return service.getSumOfBooking();
+    }
 }
