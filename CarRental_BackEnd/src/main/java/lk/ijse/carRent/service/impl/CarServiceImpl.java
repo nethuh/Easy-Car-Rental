@@ -109,7 +109,7 @@ public class CarServiceImpl implements CarService {
 
     @Override
     public Car searchCarId(String id) {
-        if (!repo.existsById(id)){
+        if (!repo.existsById(id)) {
             throw new RuntimeException("Wrong ID. Please enter Valid id..!");
         }
         return mapper.map(repo.findById(id).get(), Car.class);
@@ -142,7 +142,7 @@ public class CarServiceImpl implements CarService {
 
     @Override
     public ArrayList<CarDTO> getFilerData(String type, String fuelType) {
-        return mapper.map(repo.filterCar(type,fuelType), new TypeToken<ArrayList<Car>>(){
+        return mapper.map(repo.filterCar(type,fuelType), new TypeToken<ArrayList<Car>>() {
         }.getType());
     }
 

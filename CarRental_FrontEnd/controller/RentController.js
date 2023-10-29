@@ -8,7 +8,7 @@ $("#search_Id").on("keypress", function (event) {
         var search = $("#search_Id").val();
         $("#retManage").empty();
         $.ajax({
-            url: RentAllManageBaseUrl + "" + search,
+            url: RentAllManageBaseUrl + "rent/searchDtails?search_Id=" + search,
             method: "GET",
             contentType: "application/json",
             dataType: "json",
@@ -73,6 +73,7 @@ function blindClickEventsRent() {
         loadAllCars();
     });
 }
+
 
 //load Availability Drivers
 $.ajax({

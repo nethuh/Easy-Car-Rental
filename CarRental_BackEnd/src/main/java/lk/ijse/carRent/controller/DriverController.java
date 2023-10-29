@@ -60,10 +60,9 @@ public class DriverController {
 
     @ResponseStatus(HttpStatus.CREATED)
     @GetMapping(path = "/searchDriver", params = {"driver_Id"})
-    public Driver searchDriverId(String driver_Id){
+    public Driver searchDriverId(String driver_Id) {
         return service.searchDriverId(driver_Id);
     }
-
     @ResponseStatus(HttpStatus.CREATED)
     @GetMapping(path = "/loadAvailabilityDrivers")
     public ResponseUtil getAllAvailableDriver(){

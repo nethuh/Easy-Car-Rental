@@ -12,6 +12,7 @@ import lk.ijse.carRent.repo.DriverRepo;
 import lk.ijse.carRent.repo.RentRepo;
 import lk.ijse.carRent.service.RentService;
 import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -81,7 +82,8 @@ public class RentServiceImpl implements RentService {
 
     @Override
     public ArrayList<RentDTO> getAllRent() {
-        return null;
+        return mapper.map(rentRepo.findAll(), new TypeToken<ArrayList<RentDTO>>() {
+        }.getType());
     }
 
     @Override
@@ -157,7 +159,11 @@ public class RentServiceImpl implements RentService {
 
     @Override
     public RentDTO searchId(String id) {
-        return null;
+        if (!rentRepo.existsById(id)) {
+            throw new RuntimeException("Wrong ID. Please enter Valid id..!");
+        }
+        return mapper.map(rentRepo.findById(id).get(), RentDTO.class);
+
     }
 
     @Override

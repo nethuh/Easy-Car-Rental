@@ -130,6 +130,7 @@ $("#search_Id").on("keypress", function (event) {
 
 });
 
+
 //Load All Cars
 function loadAllCars() {
     $("#carTable").empty();

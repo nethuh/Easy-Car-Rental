@@ -63,7 +63,7 @@ public class CarController {
 
     @ResponseStatus(HttpStatus.CREATED)
     @GetMapping(path = "/searchCar", params = {"car_Id"})
-    public Car searchCusId(String car_Id){
+    public Car searchCusId(String car_Id) {
         return service.searchCarId(car_Id);
     }
 

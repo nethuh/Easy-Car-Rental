@@ -1,7 +1,6 @@
 let RentbaseUrl = "http://localhost:8080/CarRental_BackEnd_war/";
 loadAllRent();
 $("#updateCustomer").attr('disabled', true);
-
 //Rent Id generate
 generateRentID();
 

@@ -28,6 +28,7 @@ public class Reg_UserServiceImpl implements Reg_UserService {
     @Autowired
     private ModelMapper mapper;
 
+    @Override
     public void saveUser(Reg_UserDTO dto) {
 
         Reg_User regUser = new Reg_User(dto.getUser_Id(), dto.getName(), dto.getContact_No(), dto.getAddress(), dto.getEmail(), dto.getNic(), dto.getLicense_No(), "", "", new User(dto.getUser().getUser_Id(), dto.getUser().getRole_Type(), dto.getUser().getUser_Name(), dto.getUser().getPassword()));
@@ -55,6 +56,7 @@ public class Reg_UserServiceImpl implements Reg_UserService {
         repo.save(regUser);
 
     }
+    @Override
     public void updateUser(Reg_UserDTO dto) {
 
         Reg_User regUser = new Reg_User(dto.getUser_Id(), dto.getName(), dto.getContact_No(), dto.getAddress(),dto.getEmail(), dto.getNic(), dto.getLicense_No(), "", "" , new User(dto.getUser().getUser_Id(),dto.getUser().getRole_Type(),dto.getUser().getUser_Name(),dto.getUser().getPassword()));
@@ -84,6 +86,7 @@ public class Reg_UserServiceImpl implements Reg_UserService {
 
     }
 
+    @Override
     public void deleteUser(String reg_ID) {
         if (!repo.existsById(reg_ID)){
             throw new RuntimeException("Wrong ID..Please enter valid id..!");
@@ -91,11 +94,12 @@ public class Reg_UserServiceImpl implements Reg_UserService {
         repo.deleteById(reg_ID);
     }
 
+    @Override
     public ArrayList<Reg_UserDTO> getAllUser() {
         return mapper.map(repo.findAll(), new TypeToken<ArrayList<Reg_User>>() {
         }.getType());
     }
-
+    @Override
     public Reg_User searchUserId(String id) {
        if (!repo.existsById(id)){
            throw new RuntimeException("Wrong ID. Please enter Valid id..!");
@@ -103,7 +107,7 @@ public class Reg_UserServiceImpl implements Reg_UserService {
         System.out.println(id);
        return mapper.map(repo.findById(id).get(), Reg_User.class);
     }
-
+    @Override
     public Reg_UserDTO availableUser(String userName) {
         return repo.availableUser(userName);
     }
