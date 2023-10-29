@@ -19,4 +19,9 @@ public interface RentService {
 
     void bookingReject(String rentID, String driverId);
     RentDTO searchId(String id);
+    CustomDTO getSumOfBooking();
+
+    CustomDTO getSumOfBookingPending();
+
+    CustomDTO getSumOfBookingActive();
 }
