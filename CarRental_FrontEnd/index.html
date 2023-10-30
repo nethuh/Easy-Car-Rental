@@ -34,11 +34,11 @@
 
         <nav class="navbar" id="navbar">
             <ul>
-                <li><a href="#">Home</a></li>
+                <li><a href="#hero">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#cars">Cars</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li><a href="#RegisterCus">Register</a></li>
+                <li><a href="#Register-customer-new">Register</a></li>
             </ul>
 
         </nav>
@@ -59,14 +59,14 @@
                     Language. Unbeatable Prices. Destinations: Spain, France, Italy, UK, USA, Portugal, Greece,
                     Australia, Ireland, Switzerland.</p>
                 <div class="d-flex" data-aos="fade-up" data-aos-delay="200">
-                    <a class="btn-Register-customer-new" href="#RegisterCus">Register</a>
+<!--                    <a class="btn-Register-customer-new" href="#Register-customer-new">Register</a>-->
                 </div>
             </div>
 
             <div class="col-md-7"> <!--Second column-->
                 <div class="carousel-inner">
                     <div class="carousel-item active" data-bs-interval="1800">
-                        <img style="margin-top: 40px" alt="..." class="d-block w-100" src="assets/img/car_a.png">
+                        <img data-aos="zoom-out" data-aos-delay="300" style="margin-top: 40px" alt="..." class="d-block w-100" src="assets/img/car_a.png">
                         <div class="carousel-caption d-none d-md-block">
 
                         </div>
@@ -647,7 +647,9 @@
 
 </footer>
 <!-- End Footer -->
+<a class="scroll-top d-flex align-items-center justify-content-center " href="#hero"><i class="bi bi-arrow-up-short "></i></a>
 
+<div id="preloader "></div>
 
 
 <!-- Vendor JS Files -->
@@ -659,6 +661,7 @@
 <script src="assets/vendor/swiper/swiper-bundle.min.js "></script>
 <script src="assets/vendor/php-email-form/validate.js "></script>
 <script rel="script" src="assets/vendor/sweetalert2-11.6.16/sweetalert2.min.js"></script>
+<script rel="script" src="assets/js/index.js"></script>
 <script>
     $(document).ready(function () {
         AOS.init();
