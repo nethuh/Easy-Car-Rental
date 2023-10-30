@@ -2,7 +2,7 @@ package lk.ijse.carRent.controller;
 
 import lk.ijse.carRent.dto.CustomDTO;
 import lk.ijse.carRent.dto.DriverDTO;
-import lk.ijse.carRent.dto.Name;
+import lk.ijse.carRent.embeded.Name;
 import lk.ijse.carRent.dto.UserDTO;
 import lk.ijse.carRent.entity.Driver;
 import lk.ijse.carRent.service.DriverService;

@@ -1,5 +1,6 @@
 package lk.ijse.carRent.dto;
 
+import lk.ijse.carRent.embeded.Name;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

@@ -337,7 +337,8 @@ section {
 --------------------------------------------------------------*/
 
 .about .about-img {
-    min-height: 600px;
+    min-height: 500px;
+    height: 600px;
     background-repeat: no-repeat;
     background-size: cover;
 }

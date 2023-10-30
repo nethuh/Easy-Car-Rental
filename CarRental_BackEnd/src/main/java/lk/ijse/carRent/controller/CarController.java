@@ -2,15 +2,13 @@ package lk.ijse.carRent.controller;
 
 import lk.ijse.carRent.dto.CarDTO;
 import lk.ijse.carRent.dto.CustomDTO;
-import lk.ijse.carRent.dto.ImageDTO;
-import lk.ijse.carRent.dto.Rate;
+import lk.ijse.carRent.embeded.ImageDTO;
+import lk.ijse.carRent.embeded.Rate;
 import lk.ijse.carRent.entity.Car;
-import lk.ijse.carRent.entity.Image;
 import lk.ijse.carRent.service.CarService;
 import lk.ijse.carRent.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;

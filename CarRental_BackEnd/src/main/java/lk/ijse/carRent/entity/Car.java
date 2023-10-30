@@ -1,7 +1,7 @@
 package lk.ijse.carRent.entity;
 
-import lk.ijse.carRent.entity.Image;
-import lk.ijse.carRent.dto.Rate;
+import lk.ijse.carRent.embeded.Image;
+import lk.ijse.carRent.embeded.Rate;
 import lk.ijse.carRent.enums.AvailabilityType;
 import lk.ijse.carRent.enums.CarType;
 import lk.ijse.carRent.enums.FuelType;
@@ -12,7 +12,6 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.*;
-import java.awt.*;
 
 @Entity
 @Data

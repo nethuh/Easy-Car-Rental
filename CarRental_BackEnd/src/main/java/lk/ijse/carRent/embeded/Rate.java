@@ -1,4 +1,4 @@
-package lk.ijse.carRent.dto;
+package lk.ijse.carRent.embeded;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -12,7 +12,7 @@ import javax.persistence.Embeddable;
 @AllArgsConstructor
 @Data
 @ToString
-public class Name {
-    String firstName;
-    String lastName;
+public class Rate {
+    private double daily_Rate;
+    private double monthly_Rate;
 }

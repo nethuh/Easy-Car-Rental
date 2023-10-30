@@ -1,5 +1,7 @@
 package lk.ijse.carRent.dto;
 
+import lk.ijse.carRent.embeded.ImageDTO;
+import lk.ijse.carRent.embeded.Rate;
 import lk.ijse.carRent.enums.AvailabilityType;
 import lk.ijse.carRent.enums.CarType;
 import lk.ijse.carRent.enums.FuelType;

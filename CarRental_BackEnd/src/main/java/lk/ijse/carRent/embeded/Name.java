@@ -1,4 +1,4 @@
-package lk.ijse.carRent.entity;
+package lk.ijse.carRent.embeded;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -12,9 +12,7 @@ import javax.persistence.Embeddable;
 @AllArgsConstructor
 @Data
 @ToString
-public class Image {
-    private String front_View;
-    private String back_View;
-    private String side_View;
-    private String interior;
+public class Name {
+    String firstName;
+    String lastName;
 }
