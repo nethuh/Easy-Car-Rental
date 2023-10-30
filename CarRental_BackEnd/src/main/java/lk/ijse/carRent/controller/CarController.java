@@ -10,6 +10,7 @@ import lk.ijse.carRent.service.CarService;
 import lk.ijse.carRent.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -63,10 +64,9 @@ public class CarController {
 
     @ResponseStatus(HttpStatus.CREATED)
     @GetMapping(path = "/searchCar", params = {"car_Id"})
-    public Car searchCusId(String car_Id) {
+    public Car searchCusId(String car_Id){
         return service.searchCarId(car_Id);
     }
-
     @ResponseStatus(HttpStatus.CREATED)
     @GetMapping(path = "/carCount")
     public @ResponseBody CustomDTO getSumCustomer(){
