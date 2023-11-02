@@ -316,3 +316,91 @@ $("#name,#brand,#type,#number_Of_Passengers,#transmission_Type,#fuel_Type,#daily
 $("#name,#brand,#type,#number_Of_Passengers,#transmission_Type,#fuel_Type,#daily_Rate,#monthly_Rate,#price_Extra_KM,#registration_Number,#free_Mileage,#color").on('blur', function (event) {
     checkValidity(carValidations);
 });
+
+$("#name").on('keydown', function (event) {
+    if (event.key === "Enter" && check(regExBrand, $("#name"))) {
+        $("#brand").focus();
+    } else {
+        focusText($("#name"));
+    }
+});
+
+$("#brand").on('keydown', function (event) {
+    if (event.key === "Enter" && check(regExModel, $("#brand"))) {
+        focusText($("#type"));
+    }
+});
+
+$("#type").on('keydown', function (event) {
+    if (event.key === "Enter" && check(regExType, $("#type"))) {
+        focusText($("#number_Of_Passengers"));
+    }
+});
+
+$("#number_Of_Passengers").on('keydown', function (event) {
+    if (event.key === "Enter" && check(regExNoPassengers, $("#number_Of_Passengers"))) {
+        if (event.which === 13) {
+            focusText($("#transmission_Type"));
+        }
+    }
+});
+
+$("#transmission_Type").on('keydown', function (event) {
+    if (event.key === "Enter" && check(regExTransmissionType, $("#transmission_Type"))) {
+        focusText($("#fuel_Type"));
+    }
+});
+
+$("#fuel_Type").on('keydown', function (event) {
+    if (event.key === "Enter" && check(regExFuelType, $("#fuel_Type"))) {
+        focusText($("#daily_Rate"));
+    }
+});
+
+$("#daily_Rate").on('keydown', function (event) {
+    if (event.key === "Enter" && check(regExDailyRate, $("#daily_Rate"))) {
+        if (event.which === 13) {
+            focusText($("#monthly_Rate"));
+        }
+    }
+});
+
+$("#monthly_Rate").on('keydown', function (event) {
+    if (event.key === "Enter" && check(regExMonthlyRate, $("#monthly_Rate"))) {
+        if (event.which === 13) {
+            focusText($("#price_Extra_KM"));
+        }
+    }
+});
+
+$("#price_Extra_KM").on('keydown', function (event) {
+    if (event.key === "Enter" && check(regExKM, $("#price_Extra_KM"))) {
+        if (event.which === 13) {
+            focusText($("#registration_Number"));
+        }
+    }
+});
+
+$("#registration_Number").on('keydown', function (event) {
+    if (event.key === "Enter" && check(regExRegNumber, $("#registration_Number"))) {
+        if (event.which === 13) {
+            focusText($("#free_Mileage"));
+        }
+    }
+});
+
+$("#free_Mileage").on('keydown', function (event) {
+    if (event.key === "Enter" && check(regExMileage, $("#free_Mileage"))) {
+        if (event.which === 13) {
+            focusText($("#color"));
+        }
+    }
+});
+
+$("#color").on('keydown', function (event) {
+    if (event.key === "Enter" && check(regExColor, $("#color"))) {
+        if (event.which === 13) {
+            $('#btnSaveCar').focus();
+        }
+    }
+});

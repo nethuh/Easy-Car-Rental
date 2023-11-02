@@ -46,6 +46,11 @@ $("#car_Id").click(function () {
             let url2 = res.image.back_View;
             let url3 = res.image.side_View;
             let url4 = res.image.interior;
+
+            console.log(url1);
+            console.log(url2);
+            console.log(url3);
+            console.log(url4);
             $("#imageLoad1").css({
                 "background": `url(${RentbaseUrl + url1})`, "background-size": "cover"
             });
@@ -99,7 +104,6 @@ let user;
 $.ajax({
     url: RentbaseUrl + "loginForm/current", method: "get", success: function (res) {
         user = res.data.user_Id;
-        console.log(res.data)
         $("#user_Id").val(res.data.user_Id);
     }
 });
@@ -111,8 +115,12 @@ $.ajax({
     contentType: "application/json",
     dataType: "json",
     success: function (res) {
+        console.log("loadAllUsers");
+        console.log(res);
         for (var cus of res.data) {
+            console.log("inside for loop");
             if (user === cus.user_Id) {
+                console.log("inside if");
                 $("#cusUserID").val(cus.user_Id);
                 $("#userFirstName").val(cus.name.firstName);
                 $("#userLastName").val(cus.name.lastName);
@@ -125,6 +133,10 @@ $.ajax({
                 $("#customerPassword").val(cus.user.password);
                 let urlone = cus.nic_Img;
                 let urltwo = cus.license_Img;
+
+                console.log(urlone);
+                console.log(urltwo);
+
                 $("#photoImg1").css({
                     "background": `url(${RentbaseUrl + urlone})`, "background-size": "cover"
                 });

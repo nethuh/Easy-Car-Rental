@@ -14,7 +14,15 @@
     --box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
 }
 
+::-webkit-scrollbar {
+    width: 8px;
+    /*background: #A8A8A8;*/
+    background: #2f2b2b;
+}
 
+::-webkit-scrollbar-thumb {
+    background: #efb70b;
+}
 
 body {
     font-family: var(--font-default);

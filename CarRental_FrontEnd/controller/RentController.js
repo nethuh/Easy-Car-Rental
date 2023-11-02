@@ -118,15 +118,15 @@ $("#btnAccept").on("click", function () {
 });
 
 //Rent Reject
-$("#btnReject").on("click", function () {
+$("#btnAccept").on("click", function () {
     let rentID = $("#requestRentId").val();
     let driverID = $("#driverId").val();
     $.ajax({
-        url: RentAllManageBaseUrl + "rent/rentReject/?rentID=" + rentID + "&driverId=" + driverID,
+        url: RentAllManageBaseUrl + "rent/rentConform/?rentID=" + rentID + "&driverId=" + driverID,
         method: "post",
         dataType: "json",
         success: function (res) {
-            saveUpdateAlert("Booking Reject", res.message);
+            saveUpdateAlert("Booking Conform", res.message);
             $("#retManage").empty();
             loadAllRentDetails();
         },
