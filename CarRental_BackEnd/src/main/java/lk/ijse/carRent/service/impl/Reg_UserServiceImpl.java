@@ -36,10 +36,12 @@ public class Reg_UserServiceImpl implements Reg_UserService {
             throw new RuntimeException("User Already Exist. Please enter another id..!");
 
         try {
-
-            String projectPath = new File(this.getClass().getProtectionDomain().getCodeSource().getLocation().toURI()).getParentFile().getParentFile().getAbsolutePath();
-            File uploadsDir = new File(projectPath + "/uploads");
-            System.out.println(projectPath);
+//            String projectPath = new File(this.getClass().getProtectionDomain().getCodeSource().getLocation().toURI()).getParentFile().getParentFile().getAbsolutePath();
+//            File uploadsDir = new File(projectPath + "/uploads");
+//            System.out.println(projectPath);
+//            uploadsDir.mkdir();
+            String imagePath = "D:/apache-tomcat-8.5.90-windows-x64/apache-tomcat-8.5.90/bin/src/imagePath";
+            File uploadsDir = new File(imagePath);
             uploadsDir.mkdir();
 
             dto.getNic_Img().transferTo(new File(uploadsDir.getAbsolutePath() + "/" + dto.getNic_Img().getOriginalFilename()));
@@ -49,7 +51,7 @@ public class Reg_UserServiceImpl implements Reg_UserService {
             regUser.setLicense_Img("uploads/" + dto.getLicense_Img().getOriginalFilename());
 
 
-        } catch (IOException | URISyntaxException e) {
+        } catch (IOException e) {
             throw new RuntimeException(e);
         }
         System.out.println(regUser);
@@ -64,10 +66,12 @@ public class Reg_UserServiceImpl implements Reg_UserService {
             throw new RuntimeException("User Not Exist. Please enter Valid id..!");
         }
         try {
+//            String projectPath = new File(this.getClass().getProtectionDomain().getCodeSource().getLocation().toURI()).getParentFile().getParentFile().getAbsolutePath();
+//            File uploadsDir = new File(projectPath + "/uploads");
+//            System.out.println(projectPath);
 
-            String projectPath = new File(this.getClass().getProtectionDomain().getCodeSource().getLocation().toURI()).getParentFile().getParentFile().getAbsolutePath();
-            File uploadsDir = new File(projectPath + "/uploads");
-            System.out.println(projectPath);
+            String imagePath = "D:/apache-tomcat-8.5.90-windows-x64/apache-tomcat-8.5.90/bin/src/imagePath";
+            File uploadsDir = new File(imagePath);
             uploadsDir.mkdir();
 
             dto.getNic_Img().transferTo(new File(uploadsDir.getAbsolutePath() + "/" + dto.getNic_Img().getOriginalFilename()));
@@ -77,7 +81,7 @@ public class Reg_UserServiceImpl implements Reg_UserService {
             regUser.setLicense_Img("uploads/" + dto.getLicense_Img().getOriginalFilename());
 
 
-        } catch (IOException | URISyntaxException e) {
+        } catch (IOException  e) {
             throw new RuntimeException(e);
         }
         System.out.println(regUser);

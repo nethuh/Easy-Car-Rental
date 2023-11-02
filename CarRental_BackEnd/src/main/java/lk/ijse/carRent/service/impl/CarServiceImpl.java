@@ -32,10 +32,12 @@ public class CarServiceImpl implements CarService {
             throw new RuntimeException("Car Already Exist. Please enter another id..!");
         }
         try {
+//            String projectPath = new File(this.getClass().getProtectionDomain().getCodeSource().getLocation().toURI()).getParentFile().getParentFile().getAbsolutePath();
+//            File uploadsDir = new File(projectPath + "/uploads");
+//            System.out.println(projectPath);
 
-            String projectPath = new File(this.getClass().getProtectionDomain().getCodeSource().getLocation().toURI()).getParentFile().getParentFile().getAbsolutePath();
-            File uploadsDir = new File(projectPath + "/uploads");
-            System.out.println(projectPath);
+            String imagePath = "D:/apache-tomcat-8.5.90-windows-x64/apache-tomcat-8.5.90/bin/src/imagePath";
+            File uploadsDir = new File(imagePath);
             uploadsDir.mkdir();
 
             dto.getImage().getFront_View().transferTo(new File(uploadsDir.getAbsolutePath() + "/" + dto.getImage().getFront_View().getOriginalFilename()));
@@ -48,7 +50,7 @@ public class CarServiceImpl implements CarService {
             car.getImage().setSide_View("uploads/"+dto.getImage().getSide_View().getOriginalFilename());
             car.getImage().setInterior("uploads/"+dto.getImage().getInterior().getOriginalFilename());
 
-        } catch (IOException | URISyntaxException e) {
+        } catch (IOException  e) {
             throw new RuntimeException(e);
         }
 
@@ -63,10 +65,12 @@ public class CarServiceImpl implements CarService {
             throw new RuntimeException("Car Not Exist. Please enter Valid id..!");
         }
         try {
+//            String projectPath = new File(this.getClass().getProtectionDomain().getCodeSource().getLocation().toURI()).getParentFile().getParentFile().getAbsolutePath();
+//            File uploadsDir = new File(projectPath + "/uploads");
+//            System.out.println(projectPath);
 
-            String projectPath = new File(this.getClass().getProtectionDomain().getCodeSource().getLocation().toURI()).getParentFile().getParentFile().getAbsolutePath();
-            File uploadsDir = new File(projectPath + "/uploads");
-            System.out.println(projectPath);
+            String imagePath = "D:/apache-tomcat-8.5.90-windows-x64/apache-tomcat-8.5.90/bin/src/imagePath";
+            File uploadsDir = new File(imagePath);
             uploadsDir.mkdir();
 
             dto.getImage().getFront_View().transferTo(new File(uploadsDir.getAbsolutePath() + "/" + dto.getImage().getFront_View().getOriginalFilename()));
@@ -79,7 +83,7 @@ public class CarServiceImpl implements CarService {
             car.getImage().setSide_View("uploads/"+dto.getImage().getSide_View().getOriginalFilename());
             car.getImage().setInterior("uploads/"+dto.getImage().getInterior().getOriginalFilename());
 
-        } catch (IOException | URISyntaxException e) {
+        } catch (IOException  e) {
             throw new RuntimeException(e);
         }
 

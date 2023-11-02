@@ -20,8 +20,14 @@ public class WebAppConfig implements WebMvcConfigurer {
         return multipartResolver;
     }
 
+//    @Override
+//    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+//        registry.addResourceHandler("/uploads/**").addResourceLocations("/uploads/");
+//    }
+
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/uploads/**").addResourceLocations("/uploads/");
+        registry.addResourceHandler("/uploads/**").addResourceLocations("file:D:/apache-tomcat-8.5.90-windows-x64/apache-tomcat-8.5.90/bin/src/imagePath/");
     }
+
 }

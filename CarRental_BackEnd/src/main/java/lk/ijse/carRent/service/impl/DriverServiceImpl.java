@@ -34,17 +34,19 @@ public class DriverServiceImpl implements DriverService {
         if (repo.existsById(dto.getUser_Id())) throw new RuntimeException("Driver Already Exist. Please enter another id..!");
 
         try {
+//            String projectPath = new File(this.getClass().getProtectionDomain().getCodeSource().getLocation().toURI()).getParentFile().getParentFile().getAbsolutePath();
+//            File uploadsDir = new File(projectPath + "/uploads");
+//            System.out.println(projectPath);
 
-            String projectPath = new File(this.getClass().getProtectionDomain().getCodeSource().getLocation().toURI()).getParentFile().getParentFile().getAbsolutePath();
-            File uploadsDir = new File(projectPath + "/uploads");
-            System.out.println(projectPath);
+            String imagePath = "D:/apache-tomcat-8.5.90-windows-x64/apache-tomcat-8.5.90/bin/src/imagePath";
+            File uploadsDir = new File(imagePath);
             uploadsDir.mkdir();
 
             dto.getLicense_Img().transferTo(new File(uploadsDir.getAbsolutePath() + "/" + dto.getLicense_Img().getOriginalFilename()));
 
             driver.setLicense_Img("uploads/" + dto.getLicense_Img().getOriginalFilename());
 
-        } catch (IOException | URISyntaxException e) {
+        } catch (IOException  e) {
             throw new RuntimeException(e);
         }
         System.out.println(driver);
@@ -61,16 +63,19 @@ public class DriverServiceImpl implements DriverService {
         }
 
         try {
-            String projectPath = new File(this.getClass().getProtectionDomain().getCodeSource().getLocation().toURI()).getParentFile().getParentFile().getAbsolutePath();
-            File uploadsDir = new File(projectPath + "/uploads");
-            System.out.println(projectPath);
+//            String projectPath = new File(this.getClass().getProtectionDomain().getCodeSource().getLocation().toURI()).getParentFile().getParentFile().getAbsolutePath();
+//            File uploadsDir = new File(projectPath + "/uploads");
+//            System.out.println(projectPath);
+
+            String imagePath = "D:/apache-tomcat-8.5.90-windows-x64/apache-tomcat-8.5.90/bin/src/imagePath";
+            File uploadsDir = new File(imagePath);
             uploadsDir.mkdir();
 
             dto.getLicense_Img().transferTo(new File(uploadsDir.getAbsolutePath() + "/" + dto.getLicense_Img().getOriginalFilename()));
 
             driver.setLicense_Img("uploads/" + dto.getLicense_Img().getOriginalFilename());
 
-        } catch (IOException | URISyntaxException e) {
+        } catch (IOException  e) {
             throw new RuntimeException(e);
         }
         System.out.println(driver);

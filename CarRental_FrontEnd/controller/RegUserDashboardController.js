@@ -138,11 +138,15 @@ $.ajax({
                 console.log(urltwo);
 
                 $("#photoImg1").css({
-                    "background": `url(${RentbaseUrl + urlone})`, "background-size": "cover"
+                    "background": `url(${RentbaseUrl + urlone})`,
+                    "background-size": "cover"
                 });
+
                 $("#photoImg2").css({
-                    "background": `url(${RentbaseUrl + urltwo})`, "background-size": "cover"
+                    "background": `url(${RentbaseUrl + urltwo})`,
+                    "background-size": "cover"
                 });
+
             }
         }
     }
