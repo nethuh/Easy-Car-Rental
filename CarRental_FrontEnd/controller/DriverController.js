@@ -272,6 +272,71 @@ $("#firstName,#lastName,#contact_No,#address,#email,#nic_No,#license_No,#user_Na
     checkValidity(driverValidations);
 });
 
+$("#firstName").on('keydown', function (event) {
+    if (event.key === "Enter" && check(regExFirstName, $("#firstName"))) {
+        $("#lastName").focus();
+    } else {
+        focusText($("#firstName"));
+    }
+});
+
+$("#lastName").on('keydown', function (event) {
+    if (event.key === "Enter" && check(regExLastName, $("#lastName"))) {
+        focusText($("#contact_No"));
+    }
+});
+
+$("#contact_No").on('keydown', function (event) {
+    if (event.key === "Enter" && check(regExContactNum, $("#contact_No"))) {
+        focusText($("#address"));
+    }
+});
+
+$("#address").on('keydown', function (event) {
+    if (event.key === "Enter" && check(regExCusAddress, $("#address"))) {
+        if (event.which === 13) {
+            focusText($("#email"));
+        }
+    }
+});
+
+$("#email").on('keydown', function (event) {
+    if (event.key === "Enter" && check(regExEmailCusAddress, $("#email"))) {
+        focusText($("#nic_No"));
+    }
+});
+
+$("#nic_No").on('keydown', function (event) {
+    if (event.key === "Enter" && check(regExNIC, $("#nic_No"))) {
+        focusText($("#license_No"));
+    }
+});
+
+$("#license_No").on('keydown', function (event) {
+    if (event.key === "Enter" && check(regExDrivingNIC, $("#license_No"))) {
+        if (event.which === 13) {
+            focusText($("#user_Name"));
+        }
+    }
+});
+
+$("#user_Name").on('keydown', function (event) {
+    if (event.key === "Enter" && check(regExUserName, $("#user_Name"))) {
+        if (event.which === 13) {
+            focusText($("#password"));
+        }
+    }
+});
+
+$("#password").on('keydown', function (event) {
+    if (event.key === "Enter" && check(regExPassword, $("#password"))) {
+        if (event.which === 13) {
+            $('#btnSaveDriver').focus();
+        }
+    }
+});
+
+
 function setButtonState(value) {
     if (value > 0) {
         $("#btnSaveDriver").attr('disabled', true);
